@@ -1,0 +1,20 @@
+HealingMart Converter Studio v3.6.0 QA
+
+PASS - hm-converter-app.v3.6.0.js Node syntax check
+PASS - CSS v3.6.0 path referenced by app JS
+PASS - Registry version cache query updated to v3.6.0
+PASS - Home quickfinder anchor present
+PASS - Home upload anchor present
+PASS - Home popular anchor present
+PASS - Home categories anchor present
+PASS - Blogger HTML loads hm-converter-app.v3.6.0.js
+PASS - Blogger allowed-host check included
+PASS - Blogger loading failure UI included
+PASS - Blogger noscript UI included
+PASS - Blogger duplicate post title/meta hide CSS included
+PASS - Mobile bottom navigation 4 actions included
+PASS - Mobile safe-area bottom padding included
+
+NOT TESTED - Live Blogger theme rendering
+NOT TESTED - Android / iPhone physical-device rendering
+NOT TESTED - Existing HealingMart theme XML container split (full theme XML not provided)

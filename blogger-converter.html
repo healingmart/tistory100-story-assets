@@ -1,0 +1,485 @@
+<!-- ==================================================
+     Healing Mart Converter Platform v3.6.0
+     Original work by Healing Mart
+     https://www.healing-mart.com/
+
+     Blogger = User-facing platform
+     GitHub Pages = Static JS/CSS/Data hosting
+
+     © Healing Mart. All rights reserved.
+================================================== -->
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"힐링편의점 변환도구",
+  "alternateName":"HealingMart Converter",
+  "description":"PDF, 문서, 이미지, 동영상, 오디오, 데이터와 다양한 단위를 쉽고 빠르게 변환할 수 있는 온라인 변환도구 모음입니다.",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Web",
+  "isAccessibleForFree":true,
+  "publisher":{
+    "@type":"Organization",
+    "name":"Healing Mart",
+    "url":"https://www.healing-mart.com/"
+  },
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"KRW"
+  }
+}
+</script>
+
+<style>
+/* ==================================================
+   Healing Mart Converter
+   Blogger Production Shell v3.6.0
+================================================== */
+
+.hm-converter-shell{
+  width:100%;
+  max-width:1500px;
+  margin:0 auto;
+  padding:0 6px 28px;
+  box-sizing:border-box;
+  color:#111827;
+  font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",Arial,sans-serif;
+}
+.hm-converter-shell,
+.hm-converter-shell *,
+.hm-converter-shell *::before,
+.hm-converter-shell *::after{box-sizing:border-box}
+
+.hm-converter-shell .hm-converter-header{
+  width:calc(100% - 8px);
+  max-width:1500px;
+  min-height:72px;
+  margin:8px auto 14px;
+  padding:10px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:14px;
+  box-shadow:0 5px 18px rgba(30,38,60,.07);
+}
+.hm-converter-shell .hm-converter-brand{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#111827;
+  font-size:22px;
+  font-weight:900;
+  line-height:1.3;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.hm-converter-shell .hm-converter-brand-icon{
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  color:#fff;
+  background:linear-gradient(135deg,#6d5dfc,#2f7cf6);
+  font-size:20px;
+  font-weight:900;
+}
+.hm-converter-shell .hm-converter-qna{
+  min-height:48px;
+  padding:0 15px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #dbe3ea;
+  border-radius:10px;
+  color:#111827;
+  background:#fff;
+  font-size:15px;
+  font-weight:850;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.hm-converter-shell .hm-converter-qna:hover{border-color:#2f7cf6;background:#f8fbff}
+.hm-converter-shell .hm-converter-root{width:100%;min-width:0;margin:0 auto}
+.hm-converter-loading{
+  min-height:300px;
+  display:grid;
+  place-items:center;
+  padding:30px;
+  color:#334155;
+  font-size:18px;
+  font-weight:800;
+  text-align:center;
+}
+.hm-converter-load-error{
+  width:calc(100% - 16px);
+  max-width:900px;
+  margin:40px auto;
+  padding:32px 25px;
+  border:1px solid #fecaca;
+  border-radius:18px;
+  color:#7f1d1d;
+  background:#fff7f7;
+  text-align:center;
+}
+.hm-converter-load-error strong{display:block;margin-bottom:10px;font-size:22px;font-weight:900}
+.hm-converter-load-error span{font-size:16px;line-height:1.7}
+.hm-converter-shell .hm-converter-footer{padding:22px 8px 5px;color:#64748b;font-size:13px;line-height:1.6;text-align:center}
+
+/* ===== 앱형 게시글: Blogger 제목·메타·브레드크럼 숨김 ===== */
+body:has(#healingMartConverterApp) .entry-header.blog-entry-header.p-eh,
+body:has(#healingMartConverterApp) .post-title,
+body:has(#healingMartConverterApp) .entry-title,
+body:has(#healingMartConverterApp) .post-header,
+body:has(#healingMartConverterApp) .post-meta,
+body:has(#healingMartConverterApp) .post-meta-wrap,
+body:has(#healingMartConverterApp) .post-info,
+body:has(#healingMartConverterApp) .breadcrumb,
+body:has(#healingMartConverterApp) .breadcrumbs,
+body:has(#healingMartConverterApp) .post-breadcrumbs{
+  display:none !important;
+}
+
+/* ===== 자동목차 비활성 ===== */
+body:has(#healingMartConverterApp) #toc,
+body:has(#healingMartConverterApp) .toc,
+body:has(#healingMartConverterApp) #auto-toc,
+body:has(#healingMartConverterApp) .auto-toc,
+body:has(#healingMartConverterApp) .post-toc,
+body:has(#healingMartConverterApp) .toc-container,
+body:has(#healingMartConverterApp) .table-of-contents,
+body:has(#healingMartConverterApp) #toc-container,
+body:has(#healingMartConverterApp) #toc_container{display:none !important}
+
+/* ===== 사이드바 제거 ===== */
+body:has(#healingMartConverterApp) #sidebar-wrapper,
+body:has(#healingMartConverterApp) .sidebar-wrapper,
+body:has(#healingMartConverterApp) #sidebar,
+body:has(#healingMartConverterApp) .sidebar,
+body:has(#healingMartConverterApp) #blog-sidebar,
+body:has(#healingMartConverterApp) .blog-sidebar,
+body:has(#healingMartConverterApp) #sidebar-container,
+body:has(#healingMartConverterApp) .sidebar-container,
+body:has(#healingMartConverterApp) .sidebar-area{display:none !important}
+
+/* ===== 앱이 들어간 게시글의 큰 흰색 외곽 카드 제거 =====
+   실제 도구 내부 카드들이 독립 컨테이너처럼 보이도록 합니다. */
+body:has(#healingMartConverterApp) .entry-content-wrap:has(#healingMartConverterApp),
+body:has(#healingMartConverterApp) .hm-post-main-wrap:has(#healingMartConverterApp){
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+
+/* ===== Blogger 본문 확장 ===== */
+body:has(#healingMartConverterApp) #main-wrapper,
+body:has(#healingMartConverterApp) .main-wrapper,
+body:has(#healingMartConverterApp) #content-wrapper,
+body:has(#healingMartConverterApp) .content-wrapper,
+body:has(#healingMartConverterApp) .main-content,
+body:has(#healingMartConverterApp) .main-inner{
+  width:100% !important;
+  max-width:none !important;
+  margin-right:auto !important;
+  margin-left:auto !important;
+  float:none !important;
+  grid-template-columns:minmax(0,1fr) !important;
+}
+body:has(#healingMartConverterApp) .post-wrapper,
+body:has(#healingMartConverterApp) .post-outer,
+body:has(#healingMartConverterApp) .post-outer-container,
+body:has(#healingMartConverterApp) article.post,
+body:has(#healingMartConverterApp) .post,
+body:has(#healingMartConverterApp) .post-body,
+body:has(#healingMartConverterApp) .entry-content{
+  width:100% !important;
+  max-width:1540px !important;
+  margin-right:auto !important;
+  margin-left:auto !important;
+  padding-right:0 !important;
+  padding-left:0 !important;
+  float:none !important;
+}
+
+/* ===== PC 중앙 정렬 ===== */
+@media(min-width:801px){
+  #healingMartConverterApp{
+    width:calc(100% - 24px) !important;
+    max-width:1500px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+}
+
+/* ==================================================
+   모바일 바텀 내비게이션
+================================================== */
+.hm-converter-bottom-nav{display:none}
+
+@media(max-width:760px){
+  #healingMartConverterApp{
+    width:calc(100% + 32px) !important;
+    max-width:none !important;
+    margin-right:-16px !important;
+    margin-left:-16px !important;
+    padding-right:0 !important;
+    padding-left:0 !important;
+    padding-bottom:calc(108px + env(safe-area-inset-bottom)) !important;
+  }
+
+  #healingMartConverterApp .hm-converter-header{
+    width:calc(100% - 6px) !important;
+    min-height:60px !important;
+    margin:3px auto 8px !important;
+    padding:7px 9px !important;
+    border-radius:11px !important;
+  }
+  #healingMartConverterApp .hm-converter-brand{font-size:17px}
+  #healingMartConverterApp .hm-converter-brand-icon{width:36px;height:36px;flex-basis:36px}
+  #healingMartConverterApp .hm-converter-qna{min-height:40px;padding:0 9px;font-size:13px}
+
+  .hm-converter-bottom-nav{
+    width:calc(100% - 16px);
+    max-width:540px;
+    min-height:70px;
+    padding:6px 7px calc(6px + env(safe-area-inset-bottom));
+    position:fixed;
+    left:50%;
+    bottom:8px;
+    z-index:9998;
+    transform:translateX(-50%);
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:4px;
+    border:1px solid rgba(203,213,225,.95);
+    border-radius:20px;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 12px 34px rgba(15,23,42,.18);
+    backdrop-filter:blur(16px);
+  }
+
+  .hm-converter-bottom-nav button{
+    min-width:0;
+    min-height:58px;
+    padding:5px 3px;
+    border:0;
+    border-radius:14px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    color:#334155;
+    background:transparent;
+    font:inherit;
+    font-size:12px;
+    font-weight:850;
+    line-height:1.15;
+    cursor:pointer;
+  }
+
+  .hm-converter-bottom-nav button svg{
+    width:22px;
+    height:22px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+
+  .hm-converter-bottom-nav button[data-hm-converter-nav="upload"]{
+    color:#fff;
+    background:linear-gradient(135deg,#6d5dfc,#2f7cf6);
+    box-shadow:0 7px 18px rgba(60,93,230,.28);
+  }
+
+  .hm-converter-bottom-nav button:focus-visible{
+    outline:3px solid rgba(47,124,246,.25);
+    outline-offset:1px;
+  }
+}
+</style>
+
+<div
+  id="healingMartConverterApp"
+  class="hm-converter-shell"
+  data-hm-converter-app
+  data-tool-id="healingmart-converter"
+  data-tool-name="힐링편의점 변환도구"
+  data-tool-author="Healing Mart"
+  data-tool-version="3.6.0"
+  role="application"
+  aria-label="힐링편의점 파일 및 단위 변환도구"
+>
+  <header class="hm-converter-header">
+    <a class="hm-converter-brand" href="https://www.healing-mart.com/" aria-label="힐링편의점 홈으로 이동">
+      <span class="hm-converter-brand-icon" aria-hidden="true">⇄</span>
+      <span>힐링편의점 변환도구</span>
+    </a>
+    <a class="hm-converter-qna" href="https://www.healing-mart.com/p/qna.html">오류·문의</a>
+  </header>
+
+  <main class="hm-converter-root" data-hm-converter-stage aria-live="polite" aria-busy="true">
+    <div class="hm-converter-loading">변환도구를 불러오는 중입니다.</div>
+  </main>
+
+  <noscript>
+    <div class="hm-converter-load-error">
+      <strong>JavaScript가 필요합니다.</strong>
+      <span>힐링편의점 변환도구를 이용하려면 브라우저의 JavaScript를 활성화해 주세요.</span>
+    </div>
+  </noscript>
+
+  <footer class="hm-converter-footer">© Healing Mart. All rights reserved.</footer>
+</div>
+
+<nav class="hm-converter-bottom-nav" aria-label="모바일 변환도구 빠른 메뉴">
+  <button type="button" data-hm-converter-nav="home" aria-label="변환도구 홈">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/></svg>
+    <span>홈</span>
+  </button>
+  <button type="button" data-hm-converter-nav="quick" aria-label="빠른찾기 열기">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
+    <span>빠른찾기</span>
+  </button>
+  <button type="button" data-hm-converter-nav="upload" aria-label="파일 선택하기">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 15v5h16v-5"/></svg>
+    <span>파일넣기</span>
+  </button>
+  <button type="button" data-hm-converter-nav="categories" aria-label="변환 카테고리로 이동">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><rect x="14" y="14" width="6" height="6"/></svg>
+    <span>카테고리</span>
+  </button>
+</nav>
+
+<script>
+//<![CDATA[
+var TOOL_INFO = Object.freeze({
+  id:"healingmart-converter",
+  name:"힐링편의점 변환도구",
+  brand:"Healing Mart",
+  author:"Healing Mart",
+  version:"3.6.0",
+  website:"https://www.healing-mart.com/",
+  qna:"https://www.healing-mart.com/p/qna.html",
+  assetBase:"https://healingmart.github.io/healingmart-converter"
+});
+
+(function(){
+  "use strict";
+
+  var ALLOWED_HOSTS = Object.freeze([
+    "www.healing-mart.com",
+    "healing-mart.com",
+    "healingmart.blogspot.com"
+  ]);
+
+  var host = String(window.location.hostname || "").toLowerCase();
+  var root = document.getElementById("healingMartConverterApp");
+  var stage = root ? root.querySelector("[data-hm-converter-stage]") : null;
+
+  function showError(title,text){
+    if(!stage){return;}
+    stage.setAttribute("aria-busy","false");
+    stage.innerHTML = '<div class="hm-converter-load-error"><strong>' + title + '</strong><span>' + text + '</span></div>';
+  }
+
+  if(ALLOWED_HOSTS.indexOf(host) === -1){
+    showError("이 페이지에서는 실행할 수 없습니다.","힐링편의점 공식 사이트에서 이용해 주세요.");
+    return;
+  }
+
+  var appScript = document.createElement("script");
+  appScript.src = TOOL_INFO.assetBase + "/dist/js/hm-converter-app.v3.6.0.js?v=3.6.0";
+  appScript.defer = true;
+  appScript.setAttribute("data-base",TOOL_INFO.assetBase);
+  appScript.referrerPolicy = "strict-origin-when-cross-origin";
+
+  appScript.onload = function(){
+    if(stage){stage.setAttribute("aria-busy","false");}
+  };
+  appScript.onerror = function(){
+    showError("변환도구를 불러오지 못했습니다.","잠시 후 다시 시도해 주세요. 문제가 계속되면 오류·문의 페이지로 알려주세요.");
+  };
+  document.body.appendChild(appScript);
+
+  function homeUrl(){
+    var u = new URL(window.location.href);
+    u.searchParams.delete("category");
+    u.searchParams.delete("convert");
+    return u.pathname + u.search + u.hash;
+  }
+
+  function isConverterHome(){
+    var u = new URL(window.location.href);
+    return !u.searchParams.get("category") && !u.searchParams.get("convert");
+  }
+
+  function firePopState(){
+    try{window.dispatchEvent(new PopStateEvent("popstate"));}
+    catch(e){window.dispatchEvent(new Event("popstate"));}
+  }
+
+  function goHome(callback){
+    if(isConverterHome()){
+      callback();
+      return;
+    }
+    history.pushState({},"",homeUrl());
+    firePopState();
+    window.setTimeout(callback,140);
+  }
+
+  function scrollToElement(selector){
+    var el = document.querySelector(selector);
+    if(el){el.scrollIntoView({behavior:"smooth",block:"start"});}
+  }
+
+  document.addEventListener("click",function(event){
+    var btn = event.target.closest("[data-hm-converter-nav]");
+    if(!btn){return;}
+
+    var action = btn.getAttribute("data-hm-converter-nav");
+
+    if(action === "home"){
+      goHome(function(){window.scrollTo({top:0,behavior:"smooth"});});
+      return;
+    }
+
+    if(action === "quick"){
+      goHome(function(){
+        var details = document.querySelector("[data-quickfinder]");
+        if(details){details.open = true;}
+        scrollToElement("#hmFxQuickFinderSection");
+      });
+      return;
+    }
+
+    if(action === "upload"){
+      if(isConverterHome()){
+        var fileInput = document.querySelector("[data-home-file]");
+        if(fileInput){fileInput.click();return;}
+      }
+      goHome(function(){scrollToElement("#hmFxUploadSection");});
+      return;
+    }
+
+    if(action === "categories"){
+      goHome(function(){scrollToElement("#hmFxCategoriesSection");});
+    }
+  });
+})();
+//]]>
+</script>
+
+<!-- ===== /Healing Mart Converter v3.6.0 ===== -->
