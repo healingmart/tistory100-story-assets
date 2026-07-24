@@ -1,0 +1,26 @@
+{
+  "version": "6.0.0",
+  "brand": "TimeStory",
+  "css": "https://healingmart.github.io/tistory100-story-assets/common/css/timestory.css",
+  "engine": "https://healingmart.github.io/tistory100-story-assets/common/js/timestory-engine.js",
+  "loader": "https://healingmart.github.io/tistory100-story-assets/common/js/timestory-loader.js",
+  "endpoints": {
+    "storiesIndex": "https://healingmart.github.io/tistory100-story-assets/common/data/stories-index.json",
+    "storyLibrary": "https://healingmart.github.io/tistory100-story-assets/common/data/story-library.json",
+    "thumbnailsIndex": "https://healingmart.github.io/tistory100-story-assets/common/data/thumbnails-index.json"
+  },
+  "meditation": {
+    "baseUrl": "https://healingmart.github.io/tistory100-story-assets/common/audio/meditation/",
+    "count": 20,
+    "seconds": 300,
+    "volume": 0.38,
+    "fileNamingRule": "meditation-01.mp3 ~ meditation-20.mp3",
+    "downloadPolicy": "user-gesture-only"
+  },
+  "performance": {
+    "libraryLoad": "idle-and-on-demand",
+    "thumbnailLoad": "lazy-visible-results-only",
+    "meditationLoad": "after-user-click",
+    "cacheStrategy": "versioned-common-assets"
+  }
+}
