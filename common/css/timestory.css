@@ -1,0 +1,4777 @@
+/* =========================================================
+   Four-character idiom game link
+   ========================================================= */
+.ts100-idiom-game-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(140,106,69,.24);
+  background: linear-gradient(145deg,#fbf7ef 0%,#f1e7d8 100%);
+}
+
+.ts100-idiom-game-card::before {
+  content: "";
+  position: absolute;
+  top: -62px;
+  right: -44px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(140,106,69,.13);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ts100-idiom-game-layout {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.ts100-idiom-game-copy {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.ts100-idiom-game-title {
+  margin: 0;
+  color: var(--ts100-text);
+  font-size: clamp(22px,3vw,30px);
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: -.035em;
+  word-break: keep-all;
+}
+
+.ts100-idiom-game-desc {
+  max-width: 680px;
+  margin: 9px 0 0;
+  color: var(--ts100-muted);
+  font-size: 15px;
+  line-height: 1.75;
+  word-break: keep-all;
+}
+
+.ts100-idiom-game-link {
+  flex: 0 0 auto;
+  min-width: 230px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ts100-story-nav a.ts100-story-nav-game {
+  color: var(--ts100-primary-dark);
+  background: var(--ts100-primary-soft);
+  border-color: rgba(91,75,58,.18);
+  font-weight: 900;
+}
+
+@media (max-width: 700px) {
+  .ts100-idiom-game-layout {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ts100-idiom-game-link {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+
+
+/*
+ * Tistory100 Story Experience Engine v2.6.0 · 절처봉생 006
+ * Original work for Tistory100
+ * Namespace: ts100-
+ */
+
+.ts100-app{
+  --ts100-primary:#5b4b3a;
+  --ts100-primary-dark:#433629;
+  --ts100-primary-soft:#f4efe8;
+  --ts100-accent:#8c6a45;
+  --ts100-text:#22201d;
+  --ts100-muted:#6f6a63;
+  --ts100-line:#e6e0d8;
+  --ts100-line-strong:#d8cec2;
+  --ts100-surface:#ffffff;
+  --ts100-surface-soft:#faf8f5;
+  --ts100-danger:#b84b4b;
+  --ts100-success:#4f7a5b;
+  --ts100-radius:16px;
+  --ts100-radius-small:11px;
+  --ts100-shadow:0 10px 30px rgba(44,37,30,.07);
+  --ts100-frame-width:992px;
+  --ts100-reading-width:860px;
+  --ts100-experience-width:992px;
+
+  width:100%;
+  max-width:1050px;
+  margin:0 auto;
+  padding:0 6px 36px;
+  color:var(--ts100-text);
+  font-family:inherit;
+  font-size:16px;
+  line-height:1.75;
+}
+
+.ts100-app,
+.ts100-app *,
+.ts100-app *::before,
+.ts100-app *::after{
+  box-sizing:border-box;
+}
+
+.ts100-app button,
+.ts100-app input,
+.ts100-app select,
+.ts100-app textarea{
+  font:inherit;
+}
+
+.ts100-app button,
+.ts100-app a{
+  -webkit-tap-highlight-color:transparent;
+}
+
+.ts100-app img,
+.ts100-app canvas{
+  max-width:100%;
+}
+
+.ts100-hidden{
+  display:none !important;
+}
+
+.ts100-frame{
+  width:calc(100% - 8px);
+  max-width:var(--ts100-frame-width);
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.ts100-reading{
+  width:calc(100% - 8px);
+  max-width:var(--ts100-reading-width);
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.ts100-experience{
+  width:calc(100% - 8px);
+  max-width:var(--ts100-experience-width);
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Header */
+.ts100-header{
+  min-height:62px;
+  margin-top:8px;
+  margin-bottom:14px;
+  padding:10px 17px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:rgba(255,255,255,.98);
+  border:1px solid var(--ts100-line);
+  border-radius:var(--ts100-radius);
+  box-shadow:0 5px 18px rgba(44,37,30,.06);
+}
+
+.ts100-brand{
+  min-width:0;
+  flex:1 1 auto;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.ts100-brand-mark{
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:linear-gradient(135deg,var(--ts100-primary),var(--ts100-accent));
+  border-radius:10px;
+  box-shadow:0 6px 14px rgba(91,75,58,.18);
+}
+
+.ts100-brand-mark svg{
+  width:18px;
+  height:18px;
+  display:block;
+}
+
+.ts100-brand-title{
+  min-width:0;
+  overflow:hidden;
+  color:var(--ts100-text);
+  font-size:16px;
+  font-weight:850;
+  line-height:1.3;
+  letter-spacing:-.035em;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.ts100-header-actions{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+/* Buttons */
+.ts100-btn{
+  min-height:42px;
+  padding:0 15px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  color:var(--ts100-text);
+  background:#fff;
+  border:1px solid var(--ts100-line-strong);
+  border-radius:10px;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.2;
+  text-decoration:none;
+  cursor:pointer;
+  transition:background-color .16s ease,border-color .16s ease,color .16s ease,transform .16s ease,box-shadow .16s ease;
+}
+
+.ts100-btn:hover{
+  background:var(--ts100-surface-soft);
+  border-color:var(--ts100-accent);
+  transform:translateY(-1px);
+}
+
+.ts100-btn:disabled{
+  cursor:not-allowed;
+  opacity:.48;
+  transform:none;
+}
+
+.ts100-btn-primary{
+  color:#fff;
+  background:var(--ts100-primary);
+  border-color:var(--ts100-primary);
+}
+
+.ts100-btn-primary:hover{
+  color:#fff;
+  background:var(--ts100-primary-dark);
+  border-color:var(--ts100-primary-dark);
+}
+
+.ts100-btn-soft{
+  color:var(--ts100-primary-dark);
+  background:var(--ts100-primary-soft);
+  border-color:rgba(91,75,58,.14);
+}
+
+.ts100-btn-block{
+  width:100%;
+}
+
+.ts100-btn-icon{
+  width:18px;
+  height:18px;
+  display:block;
+  flex:0 0 18px;
+}
+
+/* Hero */
+.ts100-hero{
+  margin-bottom:20px;
+  padding:40px 28px 34px;
+  text-align:center;
+  background:linear-gradient(180deg,#fbf8f2 0%,#f5eee4 100%);
+  border:1px solid #e7dccf;
+  border-radius:20px;
+  box-shadow:var(--ts100-shadow);
+}
+
+.ts100-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:30px;
+  margin-bottom:13px;
+  padding:4px 11px;
+  color:var(--ts100-primary-dark);
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(91,75,58,.12);
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.02em;
+}
+
+.ts100-hanja-title{
+  margin:0;
+  color:#2f271f;
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:clamp(42px,7vw,78px);
+  font-weight:700;
+  line-height:1.18;
+  letter-spacing:.12em;
+  word-break:keep-all;
+}
+
+.ts100-korean-title{
+  margin:10px 0 0;
+  color:var(--ts100-text);
+  font-size:clamp(24px,4vw,38px);
+  font-weight:900;
+  line-height:1.3;
+  letter-spacing:-.04em;
+}
+
+.ts100-subtitle{
+  max-width:760px;
+  margin:14px auto 0;
+  color:#5d554d;
+  font-size:clamp(16px,2vw,20px);
+  font-weight:650;
+  line-height:1.65;
+  word-break:keep-all;
+}
+
+.ts100-source-badge{
+  display:inline-flex;
+  align-items:center;
+  margin-top:18px;
+  padding:6px 10px;
+  color:var(--ts100-muted);
+  background:#fff;
+  border:1px solid var(--ts100-line);
+  border-radius:999px;
+  font-size:12px;
+  font-weight:750;
+}
+
+.ts100-hero-actions{
+  margin-top:24px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+}
+
+.ts100-start-audio-note{
+  margin:9px auto 0;
+  color:var(--ts100-muted);
+  font-size:12.5px;
+  font-weight:650;
+  line-height:1.5;
+  text-align:center;
+  word-break:keep-all;
+}
+
+/* Cards and sections */
+.ts100-card{
+  width:100%;
+  margin-top:18px;
+  padding:24px;
+  background:var(--ts100-surface);
+  border:1px solid var(--ts100-line);
+  border-radius:var(--ts100-radius);
+  box-shadow:var(--ts100-shadow);
+}
+
+.ts100-section-head{
+  margin-bottom:18px;
+}
+
+.ts100-section-kicker{
+  margin:0 0 5px;
+  color:var(--ts100-accent);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.ts100-section-title{
+  margin:0;
+  color:var(--ts100-text);
+  font-size:clamp(22px,3vw,30px);
+  font-weight:900;
+  line-height:1.35;
+  letter-spacing:-.035em;
+}
+
+.ts100-section-desc{
+  margin:7px 0 0;
+  color:var(--ts100-muted);
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* Story player */
+.ts100-story-shell{
+  overflow:hidden;
+  padding:0;
+}
+
+.ts100-story-toolbar{
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  background:#fff;
+  border-bottom:1px solid var(--ts100-line);
+}
+
+.ts100-mode-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.ts100-mode-tab{
+  min-height:38px;
+  padding:0 12px;
+  border-radius:999px;
+  font-size:13px;
+}
+
+.ts100-mode-tab[aria-pressed="true"]{
+  color:#fff;
+  background:var(--ts100-primary);
+  border-color:var(--ts100-primary);
+}
+
+.ts100-story-stage{
+  position:relative;
+  background:#eee8df;
+}
+
+.ts100-story-media{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:linear-gradient(135deg,#ded4c7,#f5efe7);
+}
+
+.ts100-story-image{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+.ts100-story-fallback{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  padding:32px;
+  text-align:center;
+  color:#65584b;
+  background:linear-gradient(135deg,#e7ddd0,#f6f1ea);
+}
+
+.ts100-story-fallback-inner{
+  max-width:620px;
+}
+
+.ts100-story-fallback-index{
+  display:block;
+  margin-bottom:10px;
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:clamp(44px,8vw,86px);
+  font-weight:700;
+  line-height:1;
+  opacity:.25;
+}
+
+.ts100-story-fallback-title{
+  display:block;
+  font-size:clamp(18px,3vw,28px);
+  font-weight:850;
+  line-height:1.5;
+}
+
+.ts100-story-caption{
+  min-height:150px;
+  padding:24px 26px 18px;
+  background:#fff;
+}
+
+.ts100-story-text{
+  margin:0;
+  color:#2a2723;
+  font-size:clamp(17px,2vw,20px);
+  line-height:1.9;
+  letter-spacing:-.015em;
+  white-space:pre-line;
+  word-break:keep-all;
+}
+
+.ts100-story-narration-note{
+  margin:12px 0 0;
+  color:var(--ts100-muted);
+  font-size:12px;
+  line-height:1.6;
+}
+
+.ts100-story-controls{
+  padding:15px 16px 17px;
+  display:grid;
+  grid-template-columns:auto minmax(120px,1fr) auto;
+  align-items:center;
+  gap:10px;
+  background:#fff;
+  border-top:1px solid var(--ts100-line);
+}
+
+.ts100-page-status{
+  min-width:0;
+  text-align:center;
+}
+
+.ts100-page-count{
+  display:block;
+  color:var(--ts100-text);
+  font-size:13px;
+  font-weight:850;
+}
+
+.ts100-progress{
+  width:100%;
+  height:5px;
+  margin-top:6px;
+  overflow:hidden;
+  background:#eee8e1;
+  border-radius:999px;
+}
+
+.ts100-progress-bar{
+  width:0;
+  height:100%;
+  background:var(--ts100-accent);
+  border-radius:999px;
+  transition:width .2s ease;
+}
+
+.ts100-audio-row{
+  padding:0 16px 18px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:#fff;
+}
+
+.ts100-audio-status{
+  width:100%;
+  margin:0;
+  color:var(--ts100-muted);
+  font-size:12px;
+  text-align:center;
+}
+
+/* Audiobook */
+.ts100-audiobook{
+  padding:26px;
+  text-align:center;
+  background:linear-gradient(180deg,#2d2823 0%,#171411 100%);
+  color:#fff;
+}
+
+.ts100-audiobook-title{
+  margin:0;
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:28px;
+  line-height:1.4;
+}
+
+.ts100-audiobook-subtitle{
+  margin:7px 0 0;
+  color:rgba(255,255,255,.72);
+  font-size:14px;
+}
+
+.ts100-audiobook-controls{
+  max-width:680px;
+  margin:22px auto 0;
+}
+
+.ts100-audio-main-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.ts100-audiobook .ts100-btn{
+  color:#fff;
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.18);
+}
+
+.ts100-audiobook .ts100-btn:hover{
+  background:rgba(255,255,255,.15);
+}
+
+.ts100-audio-range{
+  width:100%;
+  margin-top:18px;
+}
+
+.ts100-audio-time{
+  margin-top:7px;
+  display:flex;
+  justify-content:space-between;
+  color:rgba(255,255,255,.65);
+  font-size:12px;
+}
+
+/* Transcript */
+.ts100-transcript-toggle{
+  margin-top:14px;
+  text-align:center;
+}
+
+.ts100-transcript{
+  margin-top:16px;
+  padding:0;
+  list-style:none;
+}
+
+.ts100-transcript-item{
+  padding:16px 0;
+  border-top:1px solid var(--ts100-line);
+}
+
+.ts100-transcript-item:first-child{
+  border-top:0;
+}
+
+.ts100-transcript-number{
+  display:block;
+  margin-bottom:5px;
+  color:var(--ts100-accent);
+  font-size:12px;
+  font-weight:900;
+}
+
+.ts100-transcript-text{
+  margin:0;
+  color:#35312d;
+  font-size:16px;
+  line-height:1.85;
+  white-space:pre-line;
+}
+
+/* Reveal and meaning */
+.ts100-reveal{
+  padding:38px 24px;
+  text-align:center;
+  background:#27211c;
+  color:#fff;
+  border-radius:var(--ts100-radius);
+}
+
+.ts100-reveal-label{
+  margin:0 0 13px;
+  color:rgba(255,255,255,.66);
+  font-size:14px;
+}
+
+.ts100-reveal-hanja{
+  margin:0;
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:clamp(40px,8vw,82px);
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:.14em;
+}
+
+.ts100-meaning-grid{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+
+.ts100-meaning-item{
+  min-width:0;
+  padding:20px 12px;
+  text-align:center;
+  background:var(--ts100-surface-soft);
+  border:1px solid var(--ts100-line);
+  border-radius:12px;
+}
+
+.ts100-meaning-char{
+  display:block;
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:38px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.ts100-meaning-reading{
+  display:block;
+  margin-top:6px;
+  color:var(--ts100-muted);
+  font-size:13px;
+  font-weight:800;
+}
+
+.ts100-meaning-desc{
+  display:block;
+  margin-top:4px;
+  color:#4e4943;
+  font-size:12px;
+}
+
+/* Editorial */
+.ts100-editorial-body{
+  color:#312d29;
+  font-size:17px;
+  line-height:1.9;
+  white-space:pre-line;
+}
+
+.ts100-editorial-question{
+  margin-top:20px;
+  padding:18px 20px;
+  color:#342b23;
+  background:var(--ts100-primary-soft);
+  border:1px solid rgba(91,75,58,.13);
+  border-radius:12px;
+  font-size:18px;
+  font-weight:850;
+  line-height:1.65;
+}
+
+/* Reflection */
+.ts100-reflection-input{
+  width:100%;
+  min-height:180px;
+  padding:14px 15px;
+  color:var(--ts100-text);
+  background:#fff;
+  border:1px solid var(--ts100-line-strong);
+  border-radius:11px;
+  resize:vertical;
+  outline:none;
+  line-height:1.75;
+}
+
+.ts100-reflection-input:focus{
+  border-color:var(--ts100-accent);
+  box-shadow:0 0 0 3px rgba(140,106,69,.12);
+}
+
+.ts100-reflection-actions{
+  margin-top:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.ts100-reflection-save-status{
+  margin:8px 2px 0;
+  color:#7a726a;
+  font-size:12px;
+  line-height:1.55;
+}
+.ts100-reflection-save-status.is-saved{color:#55725d;font-weight:750}
+
+.ts100-saved-note{
+  margin-top:14px;
+  padding:14px;
+  background:#f7fbf8;
+  border:1px solid #dce9df;
+  border-radius:10px;
+}
+
+.ts100-saved-note-time{
+  margin:0 0 5px;
+  color:var(--ts100-success);
+  font-size:12px;
+  font-weight:850;
+}
+
+.ts100-saved-note-text{
+  margin:0;
+  color:#3e4940;
+  white-space:pre-line;
+}
+
+/* Experience grid */
+.ts100-module-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+.ts100-module{
+  min-width:0;
+  padding:20px;
+  background:#fff;
+  border:1px solid var(--ts100-line);
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(44,37,30,.045);
+}
+
+.ts100-module-wide{
+  grid-column:1 / -1;
+}
+
+.ts100-module-title{
+  margin:0;
+  font-size:19px;
+  font-weight:900;
+  line-height:1.4;
+  letter-spacing:-.025em;
+}
+
+.ts100-module-desc{
+  margin:6px 0 0;
+  color:var(--ts100-muted);
+  font-size:13px;
+  line-height:1.65;
+}
+
+/* Hanja canvas */
+.ts100-write-layout{
+  margin-top:16px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 220px;
+  gap:14px;
+  align-items:stretch;
+}
+
+.ts100-write-canvas-wrap{
+  position:relative;
+  min-height:360px;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--ts100-line-strong);
+  border-radius:12px;
+  touch-action:none;
+}
+
+.ts100-write-canvas{
+  width:100%;
+  height:100%;
+  min-height:360px;
+  display:block;
+  touch-action:none;
+}
+
+.ts100-write-side{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+
+.ts100-write-char{
+  min-height:140px;
+  display:grid;
+  place-items:center;
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:72px;
+  font-weight:700;
+  background:var(--ts100-surface-soft);
+  border:1px solid var(--ts100-line);
+  border-radius:12px;
+}
+
+.ts100-write-nav{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+/* Relations */
+.ts100-relation-grid{
+  margin-top:15px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+
+.ts100-relation-card{
+  min-width:0;
+  padding:16px;
+  color:var(--ts100-text);
+  background:var(--ts100-surface-soft);
+  border:1px solid var(--ts100-line);
+  border-radius:11px;
+  text-decoration:none;
+}
+
+.ts100-relation-card:hover{
+  border-color:var(--ts100-accent);
+}
+
+.ts100-relation-type{
+  display:block;
+  margin-bottom:5px;
+  color:var(--ts100-accent);
+  font-size:11px;
+  font-weight:900;
+}
+
+.ts100-relation-name{
+  display:block;
+  font-size:17px;
+  font-weight:900;
+}
+
+.ts100-relation-hanja{
+  display:block;
+  margin-top:2px;
+  color:var(--ts100-muted);
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:15px;
+}
+
+.ts100-relation-desc{
+  display:block;
+  margin-top:7px;
+  color:#5c5751;
+  font-size:12px;
+  line-height:1.55;
+}
+
+/* Motto */
+.ts100-motto-preview{
+  margin-top:14px;
+  padding:28px 20px;
+  text-align:center;
+  background:linear-gradient(160deg,#f7f1e8,#e8ded0);
+  border:1px solid #ded1c2;
+  border-radius:14px;
+}
+
+.ts100-motto-hanja{
+  display:block;
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:clamp(34px,6vw,58px);
+  font-weight:700;
+  letter-spacing:.1em;
+}
+
+.ts100-motto-text{
+  display:block;
+  max-width:620px;
+  margin:13px auto 0;
+  color:#4d443b;
+  font-size:16px;
+  font-weight:700;
+  line-height:1.7;
+}
+
+.ts100-motto-input{
+  width:100%;
+  min-height:46px;
+  margin-top:12px;
+  padding:10px 12px;
+  color:var(--ts100-text);
+  background:#fff;
+  border:1px solid var(--ts100-line-strong);
+  border-radius:10px;
+  outline:none;
+}
+
+.ts100-motto-input:focus{
+  border-color:var(--ts100-accent);
+  box-shadow:0 0 0 3px rgba(140,106,69,.12);
+}
+
+
+.ts100-motto-options{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  margin-top:10px;
+}
+
+.ts100-motto-options label{
+  display:grid;
+  gap:5px;
+  color:var(--ts100-muted);
+  font-size:12px;
+  font-weight:800;
+}
+
+.ts100-motto-select{
+  width:100%;
+  min-height:42px;
+  padding:0 10px;
+  color:var(--ts100-text);
+  background:#fff;
+  border:1px solid var(--ts100-line-strong);
+  border-radius:10px;
+  outline:none;
+}
+
+.ts100-motto-note{
+  margin-top:10px;
+}
+
+/* Meditation */
+.ts100-meditation-box{
+  margin-top:14px;
+  padding:26px 20px;
+  text-align:center;
+  background:#25211d;
+  color:#fff;
+  border-radius:14px;
+}
+
+.ts100-meditation-hanja{
+  margin:0;
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:44px;
+  letter-spacing:.12em;
+}
+
+.ts100-meditation-question{
+  max-width:680px;
+  margin:12px auto 0;
+  color:rgba(255,255,255,.82);
+  font-size:17px;
+  line-height:1.75;
+}
+
+.ts100-meditation-time{
+  display:block;
+  margin-top:18px;
+  font-variant-numeric:tabular-nums;
+  font-size:38px;
+  font-weight:900;
+  line-height:1;
+}
+
+.ts100-meditation-actions{
+  margin-top:18px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+}
+
+.ts100-meditation-box .ts100-btn{
+  color:#fff;
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.18);
+}
+
+
+.ts100-meditation-duration{
+  margin-top:16px;
+  display:flex;
+  justify-content:center;
+  gap:7px;
+}
+
+.ts100-duration-btn{
+  min-width:58px;
+  min-height:36px;
+  padding:0 11px;
+  color:rgba(255,255,255,.78);
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;
+  font:inherit;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.ts100-duration-btn.is-active{
+  color:#25211d;
+  background:#fff;
+  border-color:#fff;
+}
+
+/* Related */
+.ts100-related-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+
+.ts100-related-card{
+  min-width:0;
+  padding:18px;
+  color:var(--ts100-text);
+  background:#fff;
+  border:1px solid var(--ts100-line);
+  border-radius:12px;
+  text-decoration:none;
+  box-shadow:0 5px 16px rgba(44,37,30,.045);
+}
+
+.ts100-related-card:hover{
+  border-color:var(--ts100-accent);
+  transform:translateY(-1px);
+}
+
+.ts100-related-hanja{
+  display:block;
+  color:var(--ts100-primary-dark);
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:24px;
+  font-weight:700;
+}
+
+.ts100-related-title{
+  display:block;
+  margin-top:5px;
+  font-size:17px;
+  font-weight:900;
+}
+
+.ts100-related-question{
+  display:block;
+  margin-top:7px;
+  color:var(--ts100-muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+/* Completion celebration · new completion only */
+.ts100-completion-celebration{
+  position:fixed;
+  inset:0;
+  z-index:10030;
+  display:grid;
+  place-items:center;
+  padding:18px;
+  background:rgba(39,31,24,.27);
+  -webkit-backdrop-filter:blur(2px);
+  backdrop-filter:blur(2px);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease;
+}
+
+.ts100-completion-celebration.is-visible{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.ts100-completion-card{
+  position:relative;
+  width:min(374px,calc(100vw - 32px));
+  overflow:hidden;
+  padding:20px 20px 18px;
+  border:1px solid rgba(170,126,67,.30);
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 50% 5%,rgba(255,246,218,.92),transparent 42%),
+    linear-gradient(180deg,#fffdf8 0%,#fbf5e9 100%);
+  box-shadow:0 22px 60px rgba(48,35,22,.24);
+  text-align:center;
+  transform:translateY(16px) scale(.965);
+  transition:transform .34s cubic-bezier(.2,.78,.24,1);
+}
+
+.ts100-completion-celebration.is-visible .ts100-completion-card{
+  transform:translateY(0) scale(1);
+}
+
+.ts100-completion-visual{
+  position:relative;
+  width:116px;
+  height:92px;
+  margin:0 auto 4px;
+}
+
+.ts100-completion-shelf{
+  position:absolute;
+  left:8px;
+  right:8px;
+  bottom:9px;
+  height:8px;
+  border-radius:6px;
+  background:linear-gradient(180deg,#b98c5c,#87613e);
+  box-shadow:0 4px 8px rgba(80,55,31,.18);
+}
+
+.ts100-completion-book{
+  position:absolute;
+  left:50%;
+  bottom:17px;
+  width:34px;
+  height:57px;
+  margin-left:-17px;
+  border:1px solid rgba(88,58,32,.22);
+  border-radius:4px 7px 5px 4px;
+  background:linear-gradient(90deg,#836248 0 13%,#b78b63 14% 88%,#cba47e 89% 100%);
+  box-shadow:0 6px 13px rgba(66,44,25,.18);
+  transform-origin:50% 100%;
+}
+
+.ts100-completion-celebration.is-visible .ts100-completion-book{
+  animation:ts100CompletionBookIn .82s cubic-bezier(.17,.83,.25,1.12) both;
+}
+
+.ts100-completion-book-number{
+  position:absolute;
+  left:50%;
+  bottom:7px;
+  color:rgba(255,255,255,.92);
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.06em;
+  transform:translateX(-50%);
+}
+
+.ts100-completion-stem{
+  position:absolute;
+  left:57px;
+  bottom:68px;
+  width:2px;
+  height:18px;
+  border-radius:2px;
+  background:#7e9164;
+  transform-origin:50% 100%;
+}
+
+.ts100-completion-celebration.is-visible .ts100-completion-stem{
+  animation:ts100CompletionStem .55s .58s ease-out both;
+}
+
+.ts100-completion-flower{
+  position:absolute;
+  left:58px;
+  bottom:84px;
+  width:1px;
+  height:1px;
+}
+
+.ts100-completion-petal{
+  position:absolute;
+  width:13px;
+  height:18px;
+  margin:-9px 0 0 -6.5px;
+  border-radius:70% 70% 62% 62%;
+  background:linear-gradient(180deg,#f3d7b0,#d9aa79);
+  transform-origin:50% 100%;
+  opacity:0;
+}
+
+.ts100-completion-petal:nth-child(1){transform:rotate(0deg) translateY(-7px) scale(.1)}
+.ts100-completion-petal:nth-child(2){transform:rotate(72deg) translateY(-7px) scale(.1)}
+.ts100-completion-petal:nth-child(3){transform:rotate(144deg) translateY(-7px) scale(.1)}
+.ts100-completion-petal:nth-child(4){transform:rotate(216deg) translateY(-7px) scale(.1)}
+.ts100-completion-petal:nth-child(5){transform:rotate(288deg) translateY(-7px) scale(.1)}
+
+.ts100-completion-celebration.is-visible .ts100-completion-petal:nth-child(1){animation:ts100CompletionPetal1 .48s .93s ease-out forwards}
+.ts100-completion-celebration.is-visible .ts100-completion-petal:nth-child(2){animation:ts100CompletionPetal2 .48s 1.01s ease-out forwards}
+.ts100-completion-celebration.is-visible .ts100-completion-petal:nth-child(3){animation:ts100CompletionPetal3 .48s 1.09s ease-out forwards}
+.ts100-completion-celebration.is-visible .ts100-completion-petal:nth-child(4){animation:ts100CompletionPetal4 .48s 1.17s ease-out forwards}
+.ts100-completion-celebration.is-visible .ts100-completion-petal:nth-child(5){animation:ts100CompletionPetal5 .48s 1.25s ease-out forwards}
+
+.ts100-completion-flower::after{
+  content:"";
+  position:absolute;
+  left:-4px;
+  top:-4px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#c8964f;
+  box-shadow:0 0 0 5px rgba(215,174,100,.12);
+  opacity:0;
+}
+
+.ts100-completion-celebration.is-visible .ts100-completion-flower::after{
+  animation:ts100CompletionCenter .35s 1.36s ease-out forwards;
+}
+
+.ts100-completion-kicker{
+  margin:2px 0 6px;
+  color:#94714c;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+
+.ts100-completion-title{
+  margin:0;
+  color:#3d3025;
+  font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:22px;
+  line-height:1.35;
+}
+
+.ts100-completion-desc{
+  margin:8px auto 0;
+  max-width:290px;
+  color:#6f6256;
+  font-size:13px;
+  line-height:1.65;
+  word-break:keep-all;
+}
+
+.ts100-completion-progress{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:28px;
+  margin-top:12px;
+  padding:5px 11px;
+  border:1px solid rgba(156,115,66,.18);
+  border-radius:999px;
+  color:#72563b;
+  background:rgba(255,255,255,.66);
+  font-size:11px;
+  font-weight:850;
+}
+
+@keyframes ts100CompletionBookIn{
+  0%{opacity:0;transform:translateY(-30px) rotate(-4deg) scale(.94)}
+  72%{opacity:1;transform:translateY(2px) rotate(.8deg) scale(1.02)}
+  100%{opacity:1;transform:translateY(0) rotate(0) scale(1)}
+}
+@keyframes ts100CompletionStem{from{opacity:0;transform:scaleY(.05)}to{opacity:1;transform:scaleY(1)}}
+@keyframes ts100CompletionPetal1{to{opacity:1;transform:rotate(0deg) translateY(-7px) scale(1)}}
+@keyframes ts100CompletionPetal2{to{opacity:1;transform:rotate(72deg) translateY(-7px) scale(1)}}
+@keyframes ts100CompletionPetal3{to{opacity:1;transform:rotate(144deg) translateY(-7px) scale(1)}}
+@keyframes ts100CompletionPetal4{to{opacity:1;transform:rotate(216deg) translateY(-7px) scale(1)}}
+@keyframes ts100CompletionPetal5{to{opacity:1;transform:rotate(288deg) translateY(-7px) scale(1)}}
+@keyframes ts100CompletionCenter{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+
+@media (max-width:480px){
+  .ts100-completion-celebration{padding:14px}
+  .ts100-completion-card{width:min(344px,calc(100vw - 24px));padding:17px 16px 16px;border-radius:19px}
+  .ts100-completion-title{font-size:20px}
+  .ts100-completion-desc{font-size:12.5px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .ts100-completion-celebration,
+  .ts100-completion-card{transition:none!important}
+  .ts100-completion-book,
+  .ts100-completion-stem,
+  .ts100-completion-petal,
+  .ts100-completion-flower::after{animation:none!important;opacity:1!important}
+}
+
+/* Utility */
+.ts100-toast{
+  position:fixed;
+  left:50%;
+  bottom:max(24px,env(safe-area-inset-bottom));
+  z-index:9999;
+  max-width:calc(100vw - 28px);
+  padding:10px 14px;
+  color:#fff;
+  background:rgba(30,27,24,.94);
+  border-radius:999px;
+  font-size:13px;
+  font-weight:750;
+  transform:translateX(-50%);
+  box-shadow:0 8px 24px rgba(0,0,0,.18);
+}
+
+.ts100-footer{
+  padding:18px 8px 4px;
+  color:var(--ts100-muted);
+  font-size:11px;
+  line-height:1.6;
+  text-align:center;
+}
+
+/* Accessibility */
+.ts100-app button:focus-visible,
+.ts100-app a:focus-visible,
+.ts100-app input:focus-visible,
+.ts100-app textarea:focus-visible,
+.ts100-app select:focus-visible{
+  outline:3px solid rgba(140,106,69,.24);
+  outline-offset:2px;
+}
+
+.ts100-sr-only{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
+
+@media(max-width:900px){
+  .ts100-module-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ts100-module-wide{
+    grid-column:auto;
+  }
+
+  .ts100-relation-grid,
+  .ts100-related-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .ts100-write-layout{
+    grid-template-columns:1fr;
+  }
+
+  .ts100-write-side{
+    display:grid;
+    grid-template-columns:160px minmax(0,1fr);
+  }
+
+  .ts100-write-nav{
+    grid-column:2;
+  }
+}
+
+@media(max-width:800px){
+  .ts100-app{
+    padding-left:3px;
+    padding-right:3px;
+  }
+
+  .ts100-card{
+    padding:16px;
+  }
+
+  .ts100-meaning-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:560px){
+  .ts100-app{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 auto 18px !important;
+    padding:0 !important;
+    font-size:16px;
+  }
+
+  .ts100-frame,
+  .ts100-reading,
+  .ts100-experience{
+    width:calc(100% - 6px) !important;
+    max-width:none !important;
+  }
+
+  .ts100-header{
+    min-height:54px;
+    margin-top:3px;
+    margin-bottom:7px;
+    padding:7px 8px;
+    gap:7px;
+    border-radius:11px;
+  }
+
+  .ts100-brand{
+    gap:7px;
+  }
+
+  .ts100-brand-mark{
+    width:29px;
+    height:29px;
+    flex-basis:29px;
+    border-radius:9px;
+  }
+
+  .ts100-brand-mark svg{
+    width:16px;
+    height:16px;
+  }
+
+  .ts100-brand-title{
+    font-size:14px;
+  }
+
+  .ts100-header-actions{
+    gap:5px;
+  }
+
+  .ts100-header-actions .ts100-btn{
+    min-height:34px;
+    padding:0 9px;
+    font-size:11px;
+  }
+
+  .ts100-header-actions .ts100-btn-text{
+    display:none;
+  }
+
+  .ts100-hero{
+    margin-bottom:10px;
+    padding:30px 14px 26px;
+    border-radius:14px;
+  }
+
+  .ts100-hanja-title{
+    letter-spacing:.06em;
+  }
+
+  .ts100-card{
+    margin-top:10px;
+    padding:12px;
+    border-radius:12px;
+  }
+
+  .ts100-story-shell{
+    padding:0;
+  }
+
+  .ts100-story-toolbar{
+    padding:10px;
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .ts100-mode-tabs{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .ts100-mode-tab{
+    width:100%;
+    min-height:38px;
+    padding:0 7px;
+    font-size:11px;
+  }
+
+  .ts100-story-media{
+    aspect-ratio:4/3;
+  }
+
+  .ts100-story-caption{
+    min-height:145px;
+    padding:18px 14px 14px;
+  }
+
+  .ts100-story-text{
+    font-size:17px;
+    line-height:1.85;
+  }
+
+  .ts100-story-controls{
+    grid-template-columns:92px minmax(0,1fr) 92px;
+    padding:12px 10px;
+    gap:7px;
+  }
+
+  .ts100-story-controls .ts100-btn{
+    min-height:44px;
+    padding:0 9px;
+    font-size:12px;
+  }
+
+  .ts100-audio-row{
+    padding:0 10px 14px;
+  }
+
+  .ts100-audio-row .ts100-btn{
+    min-height:44px;
+    flex:1 1 130px;
+  }
+
+  .ts100-reveal{
+    padding:30px 10px;
+  }
+
+  .ts100-reveal-hanja{
+    letter-spacing:.06em;
+  }
+
+  .ts100-meaning-grid,
+  .ts100-relation-grid,
+  .ts100-related-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ts100-module{
+    padding:14px;
+  }
+
+  .ts100-write-canvas-wrap,
+  .ts100-write-canvas{
+    min-height:320px;
+  }
+
+  .ts100-write-side{
+    display:block;
+  }
+
+  .ts100-write-char{
+    min-height:100px;
+    font-size:58px;
+  }
+
+  .ts100-write-nav{
+    margin-top:8px;
+  }
+
+  .ts100-btn{
+    min-height:44px;
+  }
+
+  .ts100-audiobook{
+    padding:22px 12px;
+  }
+
+  .ts100-audiobook-title{
+    font-size:23px;
+  }
+}
+
+@media(max-width:360px){
+  .ts100-brand-title{
+    font-size:13px;
+  }
+
+  .ts100-story-controls{
+    grid-template-columns:82px minmax(0,1fr) 82px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .ts100-app *,
+  .ts100-app *::before,
+  .ts100-app *::after{
+    scroll-behavior:auto !important;
+    transition:none !important;
+    animation:none !important;
+  }
+}
+
+@media(max-width:560px){
+  .ts100-motto-options{grid-template-columns:1fr;}
+}
+
+
+
+/* ===== Blogger integration / auto-slide final ===== */
+#tistory100Story{position:relative;isolation:isolate;overflow:visible}
+#tistory100Story .toc,#tistory100Story .post-toc,#tistory100Story [class*="auto-toc"]{display:none!important}
+.ts100-loading{max-width:860px;margin:24px auto;padding:28px 22px;text-align:center;background:#fff;border:1px solid #e6e0d8;border-radius:16px;color:#6f6a63;font-size:14px;line-height:1.7}
+.ts100-loading strong{display:block;margin-bottom:6px;color:#2f271f;font-size:18px}
+.ts100-mode-tab[aria-pressed="true"]{background:#5b4b3a!important;color:#fff!important;border-color:#5b4b3a!important}
+.ts100-story-image{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#161412}
+.ts100-pc-share{max-width:860px;margin:50px auto 30px;padding:30px 20px;border-top:1px solid #eee;border-bottom:1px solid #eee;text-align:center}
+.ts100-pc-share-title{font-size:15.5px;color:#555;margin-bottom:20px;line-height:1.4;font-weight:500}
+.ts100-share-buttons,.ts100-share-more{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.ts100-share-more{display:none;margin-top:15px}.ts100-share-more.active{display:flex}
+.ts100-share-btn{width:50px;height:50px;border-radius:50%;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .25s ease,box-shadow .25s ease;box-shadow:0 3px 8px rgba(0,0,0,.12)}
+.ts100-share-btn svg{width:24px;height:24px}.ts100-share-btn:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 6px 16px rgba(0,0,0,.2)}
+.ts100-share-kakao{background:#FEE500}.ts100-share-naver{background:#03C75A}.ts100-share-facebook{background:#1877F2}.ts100-share-x,.ts100-share-threads{background:#000}.ts100-share-more-btn{background:#666}.ts100-share-copy{background:#6B7280}.ts100-share-band{background:#44DA5B}.ts100-share-telegram{background:#0088CC}
+@media(max-width:768px){
+  .ts100-pc-share{display:none!important}
+  .ts100-app{padding-left:0!important;padding-right:0!important}
+  .ts100-frame,.ts100-reading,.ts100-experience{width:100%!important;max-width:none!important}
+  .ts100-story-shell{overflow:hidden}
+  .ts100-story-stage{min-width:0}
+  .ts100-story-media{width:100%;touch-action:pan-y}
+  .ts100-story-image{aspect-ratio:16/9;max-height:58vh;object-fit:cover}
+}
+
+/* ===== Final layout tuning: immersive story post ===== */
+#tistory100Story{
+  width:min(1050px,calc(100vw - 24px))!important;
+  max-width:none!important;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin-left:0!important;
+  margin-right:0!important;
+}
+
+#tistory100Story .ts100-frame{max-width:992px}
+#tistory100Story .ts100-reading{max-width:860px}
+#tistory100Story .ts100-experience{max-width:992px}
+
+@media(min-width:1083px){
+  #tistory100Story{width:1050px!important}
+}
+
+@media(min-width:768px) and (max-width:1082px){
+  #tistory100Story{width:calc(100vw - 24px)!important}
+}
+
+@media(min-width:500px) and (max-width:767px){
+  #tistory100Story{width:calc(100vw - 16px)!important}
+}
+
+@media(max-width:499px){
+  #tistory100Story{width:calc(100vw - 8px)!important}
+  #tistory100Story .ts100-frame,
+  #tistory100Story .ts100-reading,
+  #tistory100Story .ts100-experience{width:100%!important;max-width:none!important}
+  #tistory100Story .ts100-card{padding:12px}
+  #tistory100Story .ts100-story-shell{padding:0}
+  #tistory100Story .ts100-hero{padding-left:12px;padding-right:12px}
+  #tistory100Story .ts100-hero-actions{display:grid;grid-template-columns:1fr;width:100%;max-width:420px;margin-left:auto;margin-right:auto}
+  #tistory100Story .ts100-hero-actions .ts100-btn{width:100%;justify-content:center}
+  #tistory100Story .ts100-mode-tabs{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+  #tistory100Story .ts100-mode-tab{padding:5px 3px;min-height:44px;font-size:10.5px;line-height:1.2;white-space:normal}
+  #tistory100Story .ts100-meaning-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important}
+  #tistory100Story .ts100-meaning-item{padding:10px 3px!important;border-radius:9px}
+  #tistory100Story .ts100-meaning-char{font-size:29px!important}
+  #tistory100Story .ts100-meaning-reading{font-size:10px!important;margin-top:4px}
+  #tistory100Story .ts100-meaning-desc{font-size:9px!important;line-height:1.25;margin-top:3px;word-break:keep-all}
+  #tistory100Story .ts100-reveal{padding-left:4px;padding-right:4px}
+}
+
+
+
+/* ============================================================
+   VOL.01 layout normalization v5
+   - Blog main canvas: 1500px context
+   - TimeStory outer cards: 1050px
+   - Readable text measure: 860px
+   - Experience card inner width: outer card padding -> about 992px
+   - Story image: full outer-card width
+   ============================================================ */
+.ts100-app{
+  --ts100-frame-width:1050px;
+  --ts100-reading-width:860px;
+  --ts100-experience-width:1050px;
+  width:100%;
+  max-width:1050px;
+  margin:0 auto;
+  padding:0 0 36px;
+}
+
+.ts100-frame,
+.ts100-experience{
+  width:100%;
+  max-width:1050px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.ts100-reading{
+  width:100%;
+  max-width:860px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.ts100-reading-card > .ts100-section-head,
+.ts100-reading-card > .ts100-transcript-toggle,
+.ts100-reading-card > .ts100-transcript,
+.ts100-reading-card > .ts100-reveal,
+.ts100-reading-card > .ts100-meaning-grid,
+.ts100-reading-card > .ts100-editorial-body,
+.ts100-reading-card > .ts100-editorial-question,
+.ts100-reading-card > .ts100-reflection-input,
+.ts100-reading-card > .ts100-reflection-actions,
+.ts100-reading-card > .ts100-saved-note{
+  width:100%;
+  max-width:860px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.ts100-story-shell{
+  width:100%;
+  max-width:1050px;
+  padding:0;
+}
+
+.ts100-story-toolbar{
+  padding:13px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+
+.ts100-mode-tabs{
+  min-width:0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,auto));
+  gap:7px;
+}
+
+.ts100-mode-tab{
+  white-space:nowrap;
+}
+
+.ts100-story-meta{
+  flex:0 0 auto;
+  color:var(--ts100-muted);
+  font-size:12px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.ts100-story-statebar{
+  min-height:44px;
+  padding:7px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:var(--ts100-surface-soft);
+  border-top:1px solid var(--ts100-line);
+  border-bottom:1px solid var(--ts100-line);
+}
+
+.ts100-story-state-text{
+  min-width:0;
+  color:var(--ts100-muted);
+  font-size:12px;
+  line-height:1.5;
+}
+
+.ts100-auto-pause{
+  min-height:34px;
+  padding:0 12px;
+  flex:0 0 auto;
+  font-size:12px;
+  white-space:nowrap;
+}
+
+.ts100-story-media,
+.ts100-story-image{
+  width:100%;
+  aspect-ratio:16/9;
+}
+
+.ts100-story-caption{
+  min-height:0;
+  padding:26px 24px 22px;
+}
+
+.ts100-story-text,
+.ts100-story-narration-note{
+  width:100%;
+  max-width:860px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.ts100-story-controls{
+  grid-template-columns:84px minmax(140px,1fr) 84px;
+  padding:14px 18px 12px;
+}
+
+.ts100-story-controls > .ts100-btn{
+  width:84px;
+  justify-content:center;
+  white-space:nowrap;
+}
+
+.ts100-audio-row{
+  padding:0 18px 16px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,160px));
+  justify-content:center;
+  gap:8px;
+}
+
+.ts100-audio-row .ts100-audio-status{
+  grid-column:1 / -1;
+}
+
+.ts100-hero-duration{
+  margin:10px 0 0;
+  color:var(--ts100-muted);
+  font-size:12px;
+  font-weight:750;
+}
+
+.ts100-label-mobile{display:none}
+
+/* Center the 1050px story experience inside the 1500px blog main canvas. */
+#tistory100Story{
+  position:relative!important;
+  left:auto!important;
+  transform:none!important;
+  width:100%!important;
+  max-width:1050px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+#tistory100Story .ts100-frame,
+#tistory100Story .ts100-experience{
+  width:100%!important;
+  max-width:1050px!important;
+}
+
+@media(max-width:1082px){
+  #tistory100Story{
+    width:calc(100% - 32px)!important;
+  }
+}
+
+@media(max-width:767px){
+  #tistory100Story{
+    width:calc(100% - 24px)!important;
+  }
+
+  .ts100-card{
+    padding:18px;
+  }
+
+  .ts100-story-shell{
+    padding:0;
+  }
+
+  .ts100-story-toolbar{
+    padding:10px;
+    display:block;
+  }
+
+  .ts100-mode-tabs{
+    width:100%;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:5px;
+  }
+
+  .ts100-mode-tab{
+    width:100%;
+    min-width:0;
+    min-height:42px;
+    padding:0 6px;
+    font-size:12px;
+    line-height:1.2;
+    white-space:nowrap;
+  }
+
+  .ts100-story-meta{
+    margin-top:7px;
+    text-align:center;
+  }
+
+  .ts100-story-statebar{
+    min-height:42px;
+    padding:6px 10px;
+  }
+
+  .ts100-story-state-text{
+    font-size:11px;
+  }
+
+  .ts100-auto-pause{
+    min-height:32px;
+    padding:0 10px;
+    font-size:11px;
+  }
+
+  .ts100-story-image{
+    max-height:none;
+    object-fit:cover;
+  }
+
+  .ts100-story-caption{
+    padding:18px 16px 16px;
+  }
+
+  .ts100-story-controls{
+    grid-template-columns:72px minmax(0,1fr) 72px;
+    padding:11px 10px 10px;
+    gap:7px;
+  }
+
+  .ts100-story-controls > .ts100-btn{
+    width:72px;
+    min-height:42px;
+    padding:0 5px;
+    font-size:12px;
+  }
+
+  .ts100-audio-row{
+    padding:0 10px 12px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .ts100-audio-row .ts100-btn{
+    width:100%;
+    min-width:0;
+    min-height:42px;
+    padding:0 8px;
+    font-size:12px;
+    white-space:nowrap;
+  }
+
+  .ts100-label-desktop{display:none}
+  .ts100-label-mobile{display:inline}
+}
+
+@media(max-width:499px){
+  #tistory100Story{
+    width:calc(100% - 20px)!important;
+  }
+
+  #tistory100Story .ts100-card{
+    padding:16px;
+  }
+
+  #tistory100Story .ts100-story-shell{
+    padding:0;
+  }
+
+  #tistory100Story .ts100-hero{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  #tistory100Story .ts100-frame,
+  #tistory100Story .ts100-experience{
+    width:100%!important;
+    max-width:1050px!important;
+  }
+
+  #tistory100Story .ts100-mode-tab{
+    min-height:40px;
+    padding:0 3px;
+    font-size:11px;
+    white-space:nowrap;
+  }
+
+  #tistory100Story .ts100-meaning-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  }
+}
+
+
+/* ============================================================
+   VOL.01 mobile/full-width refinement v5 (legacy; overridden by v6)
+   - Broader Blogger parent reset so sidebar removal does not leave a left column
+   - Desktop: center the TimeStory experience inside the 1500px blog canvas
+   - Mobile: remove the redundant outer gutter and flatten first-level shells
+   - Handwriting controls: clear / previous / next stay on one row on phones
+   ============================================================ */
+
+/* Blogger layout reset — apply only on the TimeStory post */
+#tistory100Story{
+  width:100%!important;
+  max-width:1050px!important;
+  margin-right:auto!important;
+  margin-left:auto!important;
+}
+
+@media(max-width:767px){
+  /* Do not add a second outer gutter inside Blogger's mobile post area. */
+  #tistory100Story{
+    width:100%!important;
+    max-width:none!important;
+    margin-right:auto!important;
+    margin-left:auto!important;
+  }
+
+  #tistory100Story .ts100-frame,
+  #tistory100Story .ts100-reading,
+  #tistory100Story .ts100-experience{
+    width:100%!important;
+    max-width:none!important;
+  }
+
+  /* Story image remains full width while readable text keeps an inner measure. */
+  #tistory100Story .ts100-story-shell{
+    width:100%!important;
+  }
+
+  #tistory100Story .ts100-story-caption{
+    padding-right:16px;
+    padding-left:16px;
+  }
+
+  /* Handwriting controls: clear / previous / next in one line. */
+  #tistory100Story .ts100-write-side{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:7px;
+  }
+
+  #tistory100Story .ts100-write-char{
+    grid-column:1 / -1;
+  }
+
+  #tistory100Story .ts100-write-side > [data-action="clear-canvas"]{
+    grid-column:1;
+    width:100%;
+    min-width:0;
+    padding-right:5px;
+    padding-left:5px;
+    white-space:nowrap;
+  }
+
+  #tistory100Story .ts100-write-nav{
+    display:contents;
+  }
+
+  #tistory100Story .ts100-write-nav .ts100-btn{
+    width:100%;
+    min-width:0;
+    padding-right:5px;
+    padding-left:5px;
+    white-space:nowrap;
+  }
+}
+
+@media(max-width:560px){
+  /* Same breakout principle used by the mobile web-tool layout:
+     cancel the typical 16px Blogger post inset, then let inner content control spacing. */
+  #tistory100Story{
+    width:calc(100% + 32px)!important;
+    max-width:none!important;
+    margin-right:-16px!important;
+    margin-left:-16px!important;
+  }
+
+  /* Remove the redundant first container on phones. Inner modules remain card-like. */
+  #tistory100Story .ts100-header,
+  #tistory100Story .ts100-hero,
+  #tistory100Story .ts100-card{
+    border-right:0!important;
+    border-left:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
+
+  #tistory100Story .ts100-header{
+    margin-top:0;
+    margin-bottom:0;
+  }
+
+  #tistory100Story .ts100-hero{
+    margin-bottom:0;
+  }
+
+  #tistory100Story .ts100-card{
+    margin-top:10px;
+  }
+
+  /* Keep useful inner spacing, not outer page spacing. */
+  #tistory100Story .ts100-card:not(.ts100-story-shell){
+    padding-right:14px;
+    padding-left:14px;
+  }
+
+  #tistory100Story .ts100-story-shell{
+    padding:0!important;
+  }
+
+  #tistory100Story .ts100-mode-tabs{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:4px;
+  }
+
+  #tistory100Story .ts100-mode-tab{
+    min-width:0;
+    padding-right:3px;
+    padding-left:3px;
+    font-size:11px;
+    white-space:nowrap;
+  }
+
+  #tistory100Story .ts100-story-statebar{
+    padding-right:10px;
+    padding-left:10px;
+  }
+
+  #tistory100Story .ts100-story-controls{
+    grid-template-columns:68px minmax(0,1fr) 68px;
+    gap:6px;
+    padding-right:8px;
+    padding-left:8px;
+  }
+
+  #tistory100Story .ts100-story-controls > .ts100-btn{
+    width:68px;
+    min-width:0;
+    padding-right:3px;
+    padding-left:3px;
+    font-size:11.5px;
+    white-space:nowrap;
+  }
+
+  #tistory100Story .ts100-module{
+    padding:13px;
+  }
+
+  #tistory100Story .ts100-write-side .ts100-btn{
+    min-height:42px;
+    gap:4px;
+    font-size:11.5px;
+  }
+}
+
+
+/* ============================================================
+   VOL.01 mobile layout refinement v6
+   Scope: TimeStory content only. The blog theme controls sidebar/main layout.
+   ============================================================ */
+
+/* Desktop/tablet: one exact 1050px outer axis; reading text can stay narrower inside. */
+#tistory100Story{
+  width:100%!important;
+  max-width:1050px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  overflow-x:clip;
+}
+
+#tistory100Story .ts100-frame,
+#tistory100Story .ts100-experience{
+  width:100%!important;
+  max-width:1050px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+#tistory100Story .ts100-reading{
+  width:100%!important;
+  max-width:860px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* Player mode row: always horizontal and clean. */
+#tistory100Story .ts100-story-toolbar{
+  padding:12px 14px;
+  display:block;
+}
+
+#tistory100Story .ts100-mode-tabs{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:7px;
+}
+
+#tistory100Story .ts100-mode-tab{
+  width:100%;
+  min-width:0;
+  white-space:nowrap;
+}
+
+/* Duration, current mode and pause are one compact status row. */
+#tistory100Story .ts100-story-statebar{
+  min-height:44px;
+  padding:7px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  background:#fff;
+  border-bottom:1px solid var(--ts100-line);
+}
+
+#tistory100Story .ts100-story-state-info{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  overflow:hidden;
+}
+
+#tistory100Story .ts100-story-duration{
+  flex:0 0 auto;
+  color:var(--ts100-primary-dark);
+  font-size:12px;
+  font-weight:850;
+  white-space:nowrap;
+}
+
+#tistory100Story .ts100-story-state-text{
+  min-width:0;
+  padding-left:8px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:var(--ts100-muted);
+  border-left:1px solid var(--ts100-line);
+  font-size:12px;
+}
+
+#tistory100Story .ts100-auto-pause{
+  flex:0 0 auto;
+  min-height:32px;
+  padding:0 11px;
+  white-space:nowrap;
+}
+
+/* Handwriting: desktop keeps clear on its own row and prev/next beneath it. */
+#tistory100Story .ts100-write-controls{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+
+#tistory100Story .ts100-write-controls [data-action="clear-canvas"]{
+  grid-column:1 / -1;
+}
+
+#tistory100Story .ts100-write-controls .ts100-btn{
+  width:100%;
+  min-width:0;
+  white-space:nowrap;
+}
+
+/* Phones: escape every unknown Blogger post inset using the viewport itself.
+   Only the first-level shell is full bleed; inner content supplies its own padding. */
+@media(max-width:767px){
+  #tistory100Story{
+    width:100vw!important;
+    max-width:100vw!important;
+    margin-left:calc(50% - 50vw)!important;
+    margin-right:calc(50% - 50vw)!important;
+    padding-left:0!important;
+    padding-right:0!important;
+    overflow-x:clip!important;
+  }
+
+  #tistory100Story .ts100-frame,
+  #tistory100Story .ts100-reading,
+  #tistory100Story .ts100-experience{
+    width:100%!important;
+    max-width:none!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+
+  /* Remove the redundant outer card shell on mobile. */
+  #tistory100Story .ts100-header,
+  #tistory100Story .ts100-hero,
+  #tistory100Story > main > .ts100-card,
+  #tistory100Story > main > .ts100-experience{
+    border-left:0!important;
+    border-right:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
+
+  #tistory100Story .ts100-header{
+    margin-top:0!important;
+    margin-bottom:0!important;
+    padding-left:14px!important;
+    padding-right:14px!important;
+  }
+
+  #tistory100Story .ts100-hero{
+    margin-bottom:0!important;
+    padding-left:18px!important;
+    padding-right:18px!important;
+  }
+
+  #tistory100Story > main > .ts100-card:not(.ts100-story-shell),
+  #tistory100Story > main > .ts100-experience{
+    padding-left:18px!important;
+    padding-right:18px!important;
+  }
+
+  #tistory100Story .ts100-story-shell{
+    padding:0!important;
+  }
+
+  #tistory100Story .ts100-story-media,
+  #tistory100Story .ts100-story-image{
+    width:100%!important;
+    max-width:none!important;
+  }
+
+  #tistory100Story .ts100-story-caption{
+    padding-left:18px!important;
+    padding-right:18px!important;
+  }
+
+  #tistory100Story .ts100-story-toolbar{
+    padding:10px 12px!important;
+  }
+
+  #tistory100Story .ts100-mode-tabs{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:5px!important;
+  }
+
+  #tistory100Story .ts100-mode-tab{
+    min-height:42px!important;
+    padding-left:4px!important;
+    padding-right:4px!important;
+    font-size:11.5px!important;
+    line-height:1.15!important;
+  }
+
+  #tistory100Story .ts100-story-statebar{
+    min-height:42px!important;
+    padding:6px 12px!important;
+  }
+
+  #tistory100Story .ts100-story-state-info{
+    gap:6px!important;
+  }
+
+  #tistory100Story .ts100-story-duration,
+  #tistory100Story .ts100-story-state-text{
+    font-size:11px!important;
+  }
+
+  #tistory100Story .ts100-story-state-text{
+    padding-left:6px!important;
+  }
+
+  #tistory100Story .ts100-auto-pause{
+    min-height:32px!important;
+    padding:0 9px!important;
+    font-size:11px!important;
+  }
+
+  /* Previous / next remain compact. */
+  #tistory100Story .ts100-story-controls{
+    grid-template-columns:72px minmax(0,1fr) 72px!important;
+    gap:7px!important;
+    padding-left:10px!important;
+    padding-right:10px!important;
+  }
+
+  #tistory100Story .ts100-story-controls > .ts100-btn{
+    width:72px!important;
+    min-width:0!important;
+    padding-left:4px!important;
+    padding-right:4px!important;
+    white-space:nowrap!important;
+  }
+
+  /* Hanja writing controls: clear / previous / next in one real grid row.
+     No display:contents dependency, for Samsung Internet and embedded browsers. */
+  #tistory100Story .ts100-write-side{
+    display:block!important;
+  }
+
+  #tistory100Story .ts100-write-char{
+    margin-bottom:8px!important;
+  }
+
+  #tistory100Story .ts100-write-controls{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:7px!important;
+  }
+
+  #tistory100Story .ts100-write-controls [data-action="clear-canvas"]{
+    grid-column:auto!important;
+  }
+
+  #tistory100Story .ts100-write-controls .ts100-btn{
+    width:100%!important;
+    min-width:0!important;
+    min-height:44px!important;
+    padding-left:4px!important;
+    padding-right:4px!important;
+    gap:4px!important;
+    font-size:12px!important;
+    white-space:nowrap!important;
+  }
+
+  /* Inner experience modules remain cards, even though the outer shell is flattened. */
+  #tistory100Story .ts100-module{
+    border:1px solid var(--ts100-line)!important;
+    border-radius:12px!important;
+    background:#fff!important;
+  }
+}
+
+@media(max-width:380px){
+  #tistory100Story .ts100-mode-tab{
+    font-size:10.5px!important;
+  }
+
+  #tistory100Story .ts100-story-controls{
+    grid-template-columns:66px minmax(0,1fr) 66px!important;
+  }
+
+  #tistory100Story .ts100-story-controls > .ts100-btn{
+    width:66px!important;
+    font-size:11px!important;
+  }
+
+  #tistory100Story .ts100-write-controls .ts100-btn{
+    font-size:11px!important;
+  }
+}
+
+
+
+/* ============================================================
+   VOL.01 v7 MOBILE SINGLE-SURFACE FIX
+   - Keep the full-bleed story image width from v6.
+   - Remove the visual double-container effect below the image.
+   - Make first-level mobile sections one continuous full-width surface.
+   - Keep only real inner modules as cards.
+   ============================================================ */
+@media(max-width:767px){
+  #tistory100Story{
+    background:#fff!important;
+  }
+
+  #tistory100Story > main{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  /* First-level sections fill the same width as the story image.
+     No smaller outer card may peek through the gaps. */
+  #tistory100Story > main > .ts100-card,
+  #tistory100Story > main > .ts100-experience{
+    width:100%!important;
+    max-width:none!important;
+    margin-left:0!important;
+    margin-right:0!important;
+    border-left:0!important;
+    border-right:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    background:#fff!important;
+  }
+
+  /* Story player: image, caption and controls use one identical horizontal axis. */
+  #tistory100Story .ts100-story-shell,
+  #tistory100Story .ts100-story-toolbar,
+  #tistory100Story .ts100-story-statebar,
+  #tistory100Story [data-panel="story"],
+  #tistory100Story .ts100-story-stage,
+  #tistory100Story .ts100-story-media,
+  #tistory100Story .ts100-story-image,
+  #tistory100Story .ts100-story-caption,
+  #tistory100Story .ts100-story-controls,
+  #tistory100Story .ts100-audio-row{
+    width:100%!important;
+    max-width:none!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+
+  /* Prevent the beige stage background from appearing as a wider strip
+     around the white caption area below a full-bleed image. */
+  #tistory100Story .ts100-story-stage,
+  #tistory100Story .ts100-story-caption,
+  #tistory100Story .ts100-story-controls,
+  #tistory100Story .ts100-audio-row{
+    background:#fff!important;
+  }
+
+  #tistory100Story .ts100-story-caption{
+    padding:22px 18px 18px!important;
+  }
+
+  #tistory100Story .ts100-story-controls{
+    padding:12px 10px 14px!important;
+  }
+
+  /* Normal content sections are full-width surfaces; spacing lives inside,
+     so the Blogger/page background never appears as a second outer frame. */
+  #tistory100Story > main > .ts100-card:not(.ts100-story-shell),
+  #tistory100Story > main > .ts100-experience{
+    margin-top:0!important;
+    padding:24px 18px!important;
+    border-top:1px solid var(--ts100-line)!important;
+    border-bottom:0!important;
+  }
+
+  /* Real nested experience modules remain card-like. */
+  #tistory100Story .ts100-module{
+    margin-left:0!important;
+    margin-right:0!important;
+    background:#fff!important;
+  }
+}
+
+
+
+/* ============================================================
+   VOL.01 v10 INDEPENDENT STORY NAV
+   - Blogger auto TOC stays hidden.
+   - TimeStory uses a manual horizontal navigation with platform features.
+   ============================================================ */
+.ts100-story-nav{
+  width:100%;
+  max-width:var(--ts100-frame-width);
+  margin:12px auto 18px;
+  padding:12px 14px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  overflow-x:auto;
+  border:1px solid var(--ts100-line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:var(--ts100-shadow);
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.ts100-story-nav::-webkit-scrollbar{display:none}
+.ts100-story-nav-title{
+  flex:0 0 auto;
+  margin-right:4px;
+  color:var(--ts100-accent);
+  font-size:12px;
+  font-weight:800;
+  white-space:nowrap;
+}
+.ts100-story-nav a{
+  flex:0 0 auto;
+  min-height:38px;
+  padding:0 13px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--ts100-line);
+  border-radius:999px;
+  color:var(--ts100-text);
+  background:var(--ts100-surface-soft);
+  font-size:12px;
+  font-weight:750;
+  line-height:1;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.ts100-story-nav a:hover{
+  border-color:var(--ts100-primary);
+  color:var(--ts100-primary-dark);
+  background:var(--ts100-primary-soft);
+}
+#ts100StorySection,
+#ts100MeaningSection,
+#ts100TodaySection,
+#ts100ReflectionSection,
+#ts100ExperienceSection{
+  scroll-margin-top:92px;
+}
+@media(max-width:767px){
+  #tistory100Story .ts100-story-nav{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    border-left:0!important;
+    border-right:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    background:#fff!important;
+  }
+  #tistory100Story .ts100-story-nav-title{display:none}
+  #tistory100Story .ts100-story-nav a{
+    min-height:36px;
+    padding:0 12px;
+    font-size:11.5px;
+  }
+}
+
+/* ============================================================
+   VOL.01 mobile parent-shell cleanup v8
+   - Remove the Blogger/Tistory post-body shell that peeks out above TimeStory
+   - Scope only to posts that actually contain #tistory100Story
+   ============================================================ */
+@media(max-width:767px){
+  .post-body:has(#tistory100Story),
+  .entry-content:has(#tistory100Story),
+  .post-content:has(#tistory100Story),
+  .post-body-container:has(#tistory100Story){
+    padding-top:0!important;
+    border-top:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    background:transparent!important;
+  }
+
+  /* Some themes wrap the body once more in a card-like article shell. */
+  article.post:has(#tistory100Story) > .post-body,
+  .post:has(#tistory100Story) > .post-body,
+  .post-outer:has(#tistory100Story) .post-body{
+    margin-top:0!important;
+  }
+
+  /* TimeStory itself visually covers the remaining rounded parent-shell cap.
+     The theme wrapper is outside this post HTML and its class differs by skin,
+     so a small mobile-only overlap is more reliable than guessing another parent selector. */
+  #tistory100Story{
+    margin-top:-34px!important;
+    position:relative!important;
+    z-index:2!important;
+    background:#fff!important;
+  }
+}
+
+
+
+/* ===== VOL.01 v11: compact top-right share menu ===== */
+/* The blog theme owns the lower copyright/share block. TimeStory keeps only one
+   compact share trigger in the header. Clicking it opens the SNS choices adapted
+   from the provided PC share-button set. */
+#tistory100Story{
+  margin-bottom:48px !important;
+}
+
+.ts100-share-anchor{
+  position:relative;
+  flex:0 0 auto;
+}
+
+.ts100-top-share{
+  width:42px;
+  min-width:42px;
+  height:42px;
+  min-height:42px;
+  padding:0 !important;
+  border-radius:12px;
+}
+
+.ts100-top-share svg{
+  width:20px;
+  height:20px;
+}
+
+.ts100-share-popover{
+  width:286px;
+  max-width:calc(100vw - 24px);
+  padding:14px;
+  position:absolute;
+  top:calc(100% + 10px);
+  right:0;
+  z-index:3000;
+  border:1px solid var(--ts100-line-strong);
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 16px 42px rgba(44,37,30,.18);
+}
+
+.ts100-share-popover.ts100-hidden{
+  display:none !important;
+}
+
+.ts100-share-popover::before{
+  content:"";
+  width:12px;
+  height:12px;
+  position:absolute;
+  top:-7px;
+  right:15px;
+  transform:rotate(45deg);
+  border-top:1px solid var(--ts100-line-strong);
+  border-left:1px solid var(--ts100-line-strong);
+  background:#fff;
+}
+
+.ts100-share-popover-title{
+  margin:0 0 12px;
+  color:var(--ts100-muted);
+  font-size:12px;
+  font-weight:800;
+  text-align:left;
+}
+
+.ts100-share-menu-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px 8px;
+}
+
+.ts100-share-service{
+  min-width:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  border:0;
+  background:transparent;
+  color:var(--ts100-text);
+  font:inherit;
+  font-size:10px;
+  font-weight:750;
+  cursor:pointer;
+}
+
+.ts100-share-service-icon{
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  box-shadow:0 3px 9px rgba(0,0,0,.12);
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+
+.ts100-share-service:hover .ts100-share-service-icon{
+  transform:translateY(-2px);
+  box-shadow:0 7px 16px rgba(0,0,0,.18);
+}
+
+.ts100-share-service svg{
+  width:22px;
+  height:22px;
+  display:block;
+}
+
+.ts100-share-kakao .ts100-share-service-icon{background:#FEE500;color:#3C1E1E;}
+.ts100-share-naver .ts100-share-service-icon{background:#03C75A;color:#fff;}
+.ts100-share-facebook .ts100-share-service-icon{background:#1877F2;color:#fff;}
+.ts100-share-x .ts100-share-service-icon,
+.ts100-share-threads .ts100-share-service-icon{background:#000;color:#fff;}
+.ts100-share-copy .ts100-share-service-icon{background:#6B7280;color:#fff;}
+.ts100-share-band .ts100-share-service-icon{background:#44DA5B;color:#fff;}
+.ts100-share-telegram .ts100-share-service-icon{background:#0088CC;color:#fff;}
+
+@media(max-width:768px){
+  #tistory100Story{
+    margin-bottom:36px !important;
+  }
+  .ts100-top-share{
+    width:38px;
+    min-width:38px;
+    height:38px;
+    min-height:38px;
+  }
+  .ts100-share-popover{
+    width:272px;
+    padding:13px 11px;
+  }
+  .ts100-share-menu-grid{
+    gap:11px 6px;
+  }
+  .ts100-share-service-icon{
+    width:42px;
+    height:42px;
+  }
+}
+
+/* Remove obsolete in-post share UI if an older cached fragment survives. */
+.ts100-pc-share{
+  display:none !important;
+}
+
+
+/* ==================================================
+   TimeStory v12 additions
+   - Gentle motion in auto mode only
+   - Local-only personal memory system
+   - Handwriting reflection canvas
+   - Personal wisdom summary
+   ================================================== */
+.ts100-story-media{overflow:hidden}
+.ts100-story-image{transform:scale(1);transform-origin:center center;backface-visibility:hidden}
+.ts100-story-image.ts100-motion-zoom-in{animation:ts100ZoomIn var(--ts100-motion-duration,14s) ease-in-out both}
+.ts100-story-image.ts100-motion-zoom-out{animation:ts100ZoomOut var(--ts100-motion-duration,14s) ease-in-out both}
+@keyframes ts100ZoomIn{from{transform:scale(1)}to{transform:scale(1.04)}}
+@keyframes ts100ZoomOut{from{transform:scale(1.04)}to{transform:scale(1)}}
+
+.ts100-local-notice{
+  display:grid;gap:5px;margin:18px 0 22px;padding:14px 16px;border:1px solid #e5ddd2;
+  border-radius:13px;background:#faf8f5;color:#625b53;font-size:13px;line-height:1.65
+}
+.ts100-local-notice strong{color:#3f372f;font-size:13.5px}
+.ts100-record-block{margin-top:22px}
+.ts100-record-title{margin:0 0 8px;font-size:18px;line-height:1.4;color:#2f2923}
+.ts100-record-help{margin:0 0 12px;color:#746d65;font-size:13.5px;line-height:1.7}
+.ts100-memory-canvas-wrap{width:100%;border:1px solid #e1d8cd;border-radius:16px;background:#fffdf9;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(91,75,58,.02)}
+.ts100-memory-canvas{display:block;width:100%;height:210px;touch-action:none;cursor:crosshair}
+.ts100-memory-echo{margin-top:28px;padding:22px;border:1px solid #d9cbbb;border-radius:18px;background:linear-gradient(145deg,#fbf7f1,#f5eee4)}
+.ts100-memory-echo-kicker{margin:0 0 7px;color:#8c6a45;font-size:11px;font-weight:800;letter-spacing:.12em}
+.ts100-memory-echo-title{margin:0;color:#322b25;font-size:19px;line-height:1.45}
+.ts100-memory-echo-date{margin:8px 0 0;color:#82776c;font-size:12.5px}
+.ts100-memory-echo-text{margin:16px 0 0;padding:0;border:0;color:#3d342c;font-size:17px;line-height:1.85;font-weight:650}
+.ts100-memory-echo-canvas{display:block;width:100%;height:180px;margin-top:16px;border-radius:13px;background:rgba(255,255,255,.72)}
+.ts100-wisdom-summary{margin-top:28px;padding:22px;border:1px solid #e2dbd2;border-radius:18px;background:#fff}
+.ts100-wisdom-summary-head{margin-bottom:14px}
+.ts100-wisdom-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.ts100-wisdom-stat{min-width:0;padding:14px;border-radius:13px;background:#faf8f5;border:1px solid #eee8df}
+.ts100-wisdom-stat span{display:block;margin-bottom:7px;color:#81776d;font-size:11.5px;font-weight:700}
+.ts100-wisdom-stat strong{display:block;color:#352f29;font-size:15px;line-height:1.45;word-break:keep-all}
+.ts100-wisdom-summary-note{margin:14px 0 0;color:#867d74;font-size:12.5px;line-height:1.65}
+.ts100-wisdom-gauges{display:grid;gap:13px;margin-top:18px;padding:16px;border-radius:15px;background:#faf8f5;border:1px solid #eee8df}
+.ts100-wisdom-gauge-row{min-width:0}
+.ts100-wisdom-gauge-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:8px}
+.ts100-wisdom-gauge-head span{color:#5c534b;font-size:12.5px;font-weight:750}
+.ts100-wisdom-gauge-head strong{color:#2f2923;font-size:12.5px;font-weight:800;white-space:nowrap}
+.ts100-wisdom-gauge-track{height:9px;overflow:hidden;border-radius:999px;background:#e9e2d9}
+.ts100-wisdom-gauge-fill{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#b99a73,#7e6850);transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.ts100-wisdom-gain{margin:12px 0 0;padding:10px 12px;border-radius:12px;background:#f5efe7;color:#6d5a45;font-size:12.5px;font-weight:700;line-height:1.6}
+@media (prefers-reduced-motion:reduce){.ts100-wisdom-gauge-fill{transition:none}}
+.ts100-end-space{height:42px}
+
+@media(max-width:767px){
+  .ts100-memory-canvas{height:190px}
+  .ts100-wisdom-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ts100-memory-echo,.ts100-wisdom-summary{padding:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .ts100-story-image.ts100-motion-zoom-in,.ts100-story-image.ts100-motion-zoom-out{animation:none!important;transform:none!important}
+}
+
+
+
+/* v14 · cleaner top + post-story wisdom infographic */
+#tistory100Story{position:relative}
+#tistory100Story .ts100-header{
+  position:absolute;top:12px;right:12px;z-index:40;
+  width:auto!important;max-width:none!important;min-height:0;
+  margin:0;padding:0;background:transparent;border:0;box-shadow:none
+}
+#tistory100Story .ts100-brand{display:none!important}
+#tistory100Story .ts100-header-actions{display:block}
+#tistory100Story .ts100-top-share{
+  width:42px;height:42px;min-height:42px;padding:0;border-radius:50%;
+  background:rgba(255,255,255,.92);box-shadow:0 5px 16px rgba(44,37,30,.08);
+  backdrop-filter:blur(8px)
+}
+#tistory100Story .ts100-hero{padding-top:50px}
+#tistory100Story .ts100-hero-duration{margin-top:11px}
+#tistory100Story .ts100-hero-actions{margin-top:18px}
+#tistory100Story .ts100-story-completion{
+  margin-top:18px;padding:22px;background:linear-gradient(180deg,#fff 0%,#faf7f2 100%);
+  box-shadow:var(--ts100-shadow)
+}
+#tistory100Story .ts100-wisdom-completion-desc{
+  margin:0;color:#756b61;font-size:13px;line-height:1.65
+}
+#tistory100Story .ts100-wisdom-summary-grid-compact{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:767px){
+  #tistory100Story .ts100-header{top:8px;right:8px}
+  #tistory100Story .ts100-top-share{width:40px;height:40px;min-height:40px}
+  #tistory100Story .ts100-hero{padding-top:46px}
+  #tistory100Story .ts100-wisdom-summary-grid-compact{grid-template-columns:1fr}
+}
+
+
+/* ==================================================
+   TimeStory v15 · seamless image transition + series navigator
+   ================================================== */
+#tistory100Story .ts100-series-strip{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin:0 auto 22px;padding:9px 12px;border:1px solid #e6ded4;border-radius:999px;
+  background:rgba(255,255,255,.72);color:#6b6157;font-size:12.5px;line-height:1.35
+}
+#tistory100Story .ts100-series-current{font-weight:800;color:#3b342d;white-space:nowrap}
+#tistory100Story .ts100-series-next{margin-left:auto;color:#6f5a43;font-weight:750;text-decoration:none;white-space:nowrap}
+#tistory100Story .ts100-series-next[aria-disabled="true"]{opacity:.62;pointer-events:none}
+
+#tistory100Story .ts100-story-media{position:relative;aspect-ratio:16/9;overflow:hidden;background:#161412}
+#tistory100Story .ts100-story-image{
+  position:absolute;inset:0;width:100%!important;height:100%!important;max-height:none!important;aspect-ratio:auto!important;
+  object-fit:cover;opacity:1;z-index:2;transition:opacity .72s ease;will-change:opacity,transform;backface-visibility:hidden
+}
+#tistory100Story .ts100-story-image.ts100-image-loading{opacity:0}
+#tistory100Story .ts100-story-image-ghost{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:1;pointer-events:none;
+  transition:opacity .72s ease;backface-visibility:hidden
+}
+#tistory100Story .ts100-story-image-ghost.ts100-fade-out{opacity:0}
+#tistory100Story .ts100-story-dialogue{
+  position:absolute;left:50%;bottom:18px;z-index:8;transform:translateX(-50%);max-width:min(82%,720px);
+  padding:10px 15px;border-radius:14px;background:rgba(24,20,17,.76);color:#fff;
+  font-size:clamp(14px,1.8vw,17px);font-weight:700;line-height:1.55;text-align:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(6px);word-break:keep-all
+}
+#tistory100Story .ts100-wisdom-summary{display:block}
+#tistory100Story .ts100-wisdom-summary.ts100-hidden{display:block!important}
+#tistory100Story .ts100-wisdom-summary.ts100-wisdom-just-added{animation:ts100WisdomPulse .9s ease}
+@keyframes ts100WisdomPulse{0%{transform:translateY(0);box-shadow:var(--ts100-shadow)}45%{transform:translateY(-3px);box-shadow:0 16px 36px rgba(91,75,58,.14)}100%{transform:translateY(0);box-shadow:var(--ts100-shadow)}}
+@media(max-width:767px){
+  #tistory100Story .ts100-series-strip{margin-bottom:18px;padding:8px 10px;font-size:11.5px}
+  #tistory100Story .ts100-series-next{max-width:55%;overflow:hidden;text-overflow:ellipsis}
+  #tistory100Story .ts100-story-dialogue{bottom:12px;max-width:88%;padding:9px 12px;font-size:13.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  #tistory100Story .ts100-story-image,#tistory100Story .ts100-story-image-ghost{transition:none!important}
+  #tistory100Story .ts100-wisdom-summary.ts100-wisdom-just-added{animation:none!important}
+}
+
+
+/* ==================================================
+   TimeStory v16 · Wisdom Tree + 기록 모드 + 지혜 찾기
+   ================================================== */
+#tistory100Story .ts100-record-mode-tabs{
+  display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:18px 0 4px;padding:5px;
+  border:1px solid #e4dcd2;border-radius:14px;background:#f6f2ed
+}
+#tistory100Story .ts100-record-mode-tab{
+  min-height:42px;border:0;border-radius:10px;background:transparent;color:#74695f;font-size:13px;font-weight:800;cursor:pointer
+}
+#tistory100Story .ts100-record-mode-tab.is-active{background:#fff;color:#3c332b;box-shadow:0 3px 10px rgba(50,42,34,.07)}
+#tistory100Story .ts100-record-mode-tab:focus-visible{outline:2px solid #8c6a45;outline-offset:2px}
+#tistory100Story [data-record-panel].ts100-record-panel-hidden{display:none!important}
+#tistory100Story .ts100-memory-manage{margin-top:18px;padding-top:15px;border-top:1px dashed #ded4c8}
+#tistory100Story .ts100-memory-manage-note{margin:8px 0 0;color:#8a8076;font-size:12px;line-height:1.6}
+#tistory100Story .ts100-btn.ts100-delete-armed{border-color:#c87474;background:#fff3f3;color:#9b3f3f}
+
+#tistory100Story .ts100-wisdom-tree-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:16px 0}
+#tistory100Story .ts100-wisdom-tree-metric{padding:12px 10px;border:1px solid #ebe4da;border-radius:14px;background:#fff;text-align:center}
+#tistory100Story .ts100-wisdom-tree-metric span{display:block;color:#897f75;font-size:11px;font-weight:750}
+#tistory100Story .ts100-wisdom-tree-metric strong{display:block;margin-top:3px;color:#342d27;font-size:17px;font-weight:850}
+#tistory100Story .ts100-wisdom-tree-shell{padding:12px;border:1px solid #e6ddd2;border-radius:20px;background:linear-gradient(180deg,#fbfaf7 0%,#f2eee7 100%);overflow:hidden}
+#tistory100Story .ts100-wisdom-tree-svg{display:block;width:100%;height:auto;min-height:360px}
+#tistory100Story .ts100-tree-trunk{fill:none;stroke:#806b56;stroke-linecap:round;stroke-linejoin:round;opacity:.84}
+#tistory100Story .ts100-tree-branch{fill:none;stroke:#a68c70;stroke-width:7;stroke-linecap:round;opacity:.72}
+#tistory100Story .ts100-tree-leaf{fill:#ebe9e1;stroke:#d5d0c5;stroke-width:1.4;transition:fill .35s ease,transform .35s ease,opacity .35s ease;transform-box:fill-box;transform-origin:center}
+#tistory100Story .ts100-tree-leaf.is-active{fill:#7f9871;stroke:#687e5d;cursor:pointer;filter:drop-shadow(0 2px 3px rgba(57,74,49,.16))}
+#tistory100Story .ts100-tree-leaf.is-current{fill:#b08a58;stroke:#8d6d47}
+#tistory100Story .ts100-tree-leaf.is-new{animation:ts100LeafGrow 1.15s cubic-bezier(.18,.82,.25,1.2) both}
+#tistory100Story .ts100-tree-label{fill:#5c5147;font-size:12px;font-weight:800;text-anchor:middle;paint-order:stroke;stroke:#f6f2eb;stroke-width:4px;stroke-linejoin:round}
+#tistory100Story .ts100-tree-count{fill:#8b7f73;font-size:10px;font-weight:700;text-anchor:middle}
+#tistory100Story .ts100-tree-ground{fill:none;stroke:#d6cbbd;stroke-width:2;stroke-dasharray:4 5}
+#tistory100Story .ts100-wisdom-tree-message{margin-top:12px;padding:13px 15px;border-radius:14px;background:#fff;border:1px solid #e8e0d5;text-align:center}
+#tistory100Story .ts100-wisdom-tree-message strong{display:block;color:#4b3d31;font-size:15px;line-height:1.5}
+#tistory100Story .ts100-wisdom-tree-message span{display:block;margin-top:4px;color:#80766c;font-size:12.5px;line-height:1.6}
+#tistory100Story .ts100-wisdom-tree-legend{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:12px}
+#tistory100Story .ts100-tree-legend-item{padding:8px 7px;border:1px solid #ebe4da;border-radius:11px;background:#fff;color:#62584e;font-size:10.5px;font-weight:750;text-align:center;line-height:1.35}
+#tistory100Story .ts100-tree-legend-item b{display:block;margin-top:3px;color:#8a735a;font-size:10px}
+@keyframes ts100LeafGrow{0%{opacity:.05;transform:scale(.05) rotate(-16deg)}60%{opacity:1;transform:scale(1.18) rotate(4deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+
+#tistory100Story .ts100-wisdom-search{margin-top:18px;padding:22px;border:1px solid #e2dbd2;border-radius:18px;background:#fff;box-shadow:var(--ts100-shadow)}
+#tistory100Story .ts100-wisdom-search-box{display:flex;gap:8px;margin-top:15px}
+#tistory100Story .ts100-wisdom-search-input{flex:1 1 auto;min-width:0;width:100%;min-height:48px;padding:11px 14px;border:1px solid #dcd3c8;border-radius:13px;background:#fff;color:#302a25;font-size:15px;outline:none}
+#tistory100Story .ts100-wisdom-search-input:focus{border-color:#9d8265;box-shadow:0 0 0 3px rgba(140,106,69,.11)}
+#tistory100Story .ts100-wisdom-search-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+#tistory100Story .ts100-search-chip{border:1px solid #e2d9ce;border-radius:999px;background:#faf7f3;color:#62584e;padding:8px 11px;font-size:11.5px;font-weight:720;line-height:1.35;cursor:pointer}
+#tistory100Story .ts100-search-chip:hover{border-color:#b9a48d;background:#f5efe8}
+#tistory100Story .ts100-wisdom-search-subtitle{margin:17px 0 0;color:#7c7167;font-size:12px;font-weight:800}
+#tistory100Story .ts100-search-status{margin:13px 0 0;color:#81776d;font-size:12.5px;line-height:1.6}
+#tistory100Story .ts100-search-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+#tistory100Story .ts100-search-result{display:flex;flex-direction:column;min-width:0;padding:15px;border:1px solid #e7dfd5;border-radius:15px;background:#fbfaf8}
+#tistory100Story .ts100-search-result-role{margin:0 0 9px;color:#927451;font-size:10.5px;font-weight:850;letter-spacing:.03em}
+#tistory100Story .ts100-search-result-hanja{margin:0;color:#8b7a69;font-size:13px}
+#tistory100Story .ts100-search-result-title{margin:2px 0 0;color:#2f2923;font-size:19px;font-weight:850}
+#tistory100Story .ts100-search-result-reason{margin:9px 0 0;color:#625950;font-size:12.5px;line-height:1.65}
+#tistory100Story .ts100-search-result-question{margin:9px 0 13px;padding-top:9px;border-top:1px dashed #dfd6cb;color:#7d7166;font-size:11.5px;line-height:1.55}
+#tistory100Story .ts100-search-result .ts100-btn{margin-top:auto;width:100%;justify-content:center}
+@media(max-width:767px){
+  #tistory100Story .ts100-wisdom-tree-metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  #tistory100Story .ts100-wisdom-tree-metric{padding:10px 5px}
+  #tistory100Story .ts100-wisdom-tree-metric strong{font-size:14px}
+  #tistory100Story .ts100-wisdom-tree-shell{padding:5px}
+  #tistory100Story .ts100-wisdom-tree-svg{min-height:310px}
+  #tistory100Story .ts100-wisdom-tree-legend{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #tistory100Story .ts100-wisdom-search{padding:18px}
+  #tistory100Story .ts100-wisdom-search-box{flex-direction:column}
+  #tistory100Story .ts100-wisdom-search-box .ts100-btn{width:100%;justify-content:center}
+  #tistory100Story .ts100-search-results{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){#tistory100Story .ts100-tree-leaf.is-new{animation:none!important}}
+
+
+
+/* ============================================================
+   VOL.01 v19 · INTERACTIVE SVG WISDOM TREE + RECORD PNG + NAV
+   ============================================================ */
+#ts100WisdomTreeSection,
+#ts100WisdomSearchSection{
+  scroll-margin-top:92px;
+}
+#tistory100Story .ts100-wisdom-tree-shell{
+  position:relative;
+  padding:12px;
+  min-height:560px;
+  background:
+    radial-gradient(circle at 50% 22%,rgba(255,255,255,.92),rgba(250,247,240,.72) 42%,rgba(235,228,217,.86) 100%);
+}
+#tistory100Story .ts100-wisdom-tree-viewport{
+  position:relative;
+  width:100%;
+  height:470px;
+  overflow:hidden;
+  border-radius:16px;
+  touch-action:none;
+  cursor:grab;
+  background:
+    radial-gradient(circle at 50% 68%,rgba(129,145,94,.14),transparent 38%),
+    linear-gradient(180deg,rgba(255,255,255,.35),rgba(236,229,218,.20));
+}
+#tistory100Story .ts100-wisdom-tree-viewport:active{cursor:grabbing}
+#tistory100Story .ts100-wisdom-tree-viewport canvas{
+  display:block;
+  width:100%!important;
+  height:100%!important;
+}
+#tistory100Story .ts100-wisdom-tree-loading{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:#83786d;
+  font-size:12px;
+  pointer-events:none;
+}
+#tistory100Story .ts100-wisdom-tree-loading span{
+  width:30px;
+  height:30px;
+  border:3px solid rgba(140,106,69,.18);
+  border-top-color:#8c6a45;
+  border-radius:50%;
+  animation:ts100TreeSpin .9s linear infinite;
+}
+@keyframes ts100TreeSpin{to{transform:rotate(360deg)}}
+#tistory100Story .ts100-wisdom-tree-fallback{display:none}
+#tistory100Story .ts100-wisdom-tree-shell.ts100-tree-fallback-mode .ts100-wisdom-tree-viewport{display:none}
+#tistory100Story .ts100-wisdom-tree-shell.ts100-tree-fallback-mode .ts100-wisdom-tree-fallback{display:block}
+#tistory100Story .ts100-wisdom-tree-hint{
+  margin:8px 4px 0;
+  color:#8a8075;
+  font-size:11.5px;
+  line-height:1.6;
+  text-align:center;
+}
+#tistory100Story .ts100-delete-confirm{
+  margin-top:12px;
+  padding:16px;
+  border:1px solid #ead2cf;
+  border-radius:14px;
+  background:#fff8f7;
+}
+#tistory100Story .ts100-delete-confirm strong{
+  display:block;
+  color:#7a332f;
+  font-size:14px;
+}
+#tistory100Story .ts100-delete-confirm span{
+  display:block;
+  margin-top:6px;
+  color:#7d6b68;
+  font-size:12px;
+  line-height:1.65;
+}
+#tistory100Story .ts100-delete-confirm-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+  margin-top:12px;
+}
+#tistory100Story .ts100-delete-danger{
+  color:#fff;
+  background:#a9473f;
+  border-color:#a9473f;
+}
+#tistory100Story .ts100-delete-danger:hover{
+  color:#fff;
+  background:#8f3933;
+  border-color:#8f3933;
+}
+@media(max-width:767px){
+  #tistory100Story .ts100-wisdom-tree-shell{
+    min-height:430px;
+    padding:6px;
+    border-radius:0;
+  }
+  #tistory100Story .ts100-wisdom-tree-viewport{height:350px;border-radius:12px}
+  #tistory100Story .ts100-wisdom-tree-hint{padding:0 8px;font-size:11px}
+  #tistory100Story .ts100-delete-confirm-actions{display:grid;grid-template-columns:1fr 1fr}
+  #tistory100Story .ts100-delete-confirm-actions .ts100-btn{width:100%}
+}
+@media(max-width:499px){
+  #tistory100Story .ts100-wisdom-tree-shell{min-height:390px}
+  #tistory100Story .ts100-wisdom-tree-viewport{height:310px}
+}
+
+
+/* ============================================================
+   VOL.01 v19 · WISDOM TREE 2D INTERACTIVE MAP
+   - no WebGL / no external 3D library
+   - deterministic 100-leaf SVG infographic
+   ============================================================ */
+#tistory100Story .ts100-wisdom-tree-map-shell{
+  min-height:0;
+  padding:14px;
+  background:
+    radial-gradient(circle at 50% 44%,rgba(248,245,233,.98) 0%,rgba(245,240,229,.90) 42%,rgba(232,224,211,.76) 100%);
+}
+#tistory100Story .ts100-wisdom-tree-art{
+  display:block!important;
+  width:100%;
+  height:auto;
+  min-height:0;
+  aspect-ratio:900/660;
+  border-radius:16px;
+  background:linear-gradient(180deg,rgba(255,255,255,.46),rgba(246,241,232,.18));
+}
+#tistory100Story .ts100-tree-halo{fill:url(#ts100TreeHalo)}
+#tistory100Story .ts100-tree-root{fill:none;stroke:#8d755f;stroke-width:4;stroke-linecap:round;opacity:.28}
+#tistory100Story .ts100-tree-trunk-main{fill:none;stroke:url(#ts100TrunkGrad);stroke-width:34;stroke-linecap:round;stroke-linejoin:round}
+#tistory100Story .ts100-tree-trunk-light{fill:none;stroke:rgba(255,255,255,.24);stroke-width:7;stroke-linecap:round;opacity:.58}
+#tistory100Story .ts100-tree-map-branch{fill:none;stroke:#9c7c5c;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;opacity:.48;transition:opacity .35s ease,stroke .35s ease}
+#tistory100Story .ts100-tree-map-branch.is-awake{stroke:#806346;opacity:.90}
+#tistory100Story .ts100-tree-canopy{fill:#859b70;opacity:.07;stroke:#778c65;stroke-width:1.2;stroke-dasharray:3 5;transition:opacity .4s ease}
+#tistory100Story .ts100-tree-canopy.is-awake{opacity:.14}
+#tistory100Story .ts100-tree-bud{fill:#e6e1d7;stroke:#d0c7b9;stroke-width:1.2;opacity:.82;transform-box:fill-box;transform-origin:center;transition:filter .25s ease,opacity .25s ease}
+#tistory100Story [data-wisdom-leaf]{cursor:pointer;outline:none}
+#tistory100Story [data-wisdom-leaf]:focus-visible .ts100-tree-bud{stroke:#5d7651;stroke-width:3}
+#tistory100Story .ts100-tree-bud.is-active{fill:url(#ts100LeafGrad);stroke:#637a57;opacity:1;filter:drop-shadow(0 2px 3px rgba(56,73,47,.20))}
+#tistory100Story .ts100-tree-bud.is-current{fill:url(#ts100LeafGold);stroke:#8b6735;filter:drop-shadow(0 0 6px rgba(178,132,63,.46))}
+#tistory100Story .ts100-tree-bud-ring{fill:none;stroke:#c79a52;stroke-width:2;opacity:.9;animation:ts100WisdomPulse 1.8s ease-in-out infinite}
+#tistory100Story .ts100-tree-bud.is-new{animation:ts100WisdomLeafBloom 1.05s cubic-bezier(.18,.82,.25,1.2) both}
+#tistory100Story .ts100-tree-cat-badge{fill:rgba(255,255,255,.91);stroke:#ddd3c5;stroke-width:1.2}
+#tistory100Story .ts100-tree-cat-title{fill:#4e433a;font-size:12px;font-weight:850;text-anchor:middle}
+#tistory100Story .ts100-tree-cat-count{fill:#93785b;font-size:10px;font-weight:800;text-anchor:middle}
+#tistory100Story .ts100-tree-center-mark{fill:#fffaf0;stroke:#b99a73;stroke-width:1.5}
+#tistory100Story .ts100-tree-center-title{fill:#4e4136;font-size:13px;font-weight:900;text-anchor:middle}
+#tistory100Story .ts100-tree-center-sub{fill:#92785b;font-size:10px;font-weight:750;text-anchor:middle}
+#tistory100Story .ts100-tree-ground-line{fill:none;stroke:#cbbda9;stroke-width:2;stroke-dasharray:5 7;opacity:.65}
+@keyframes ts100WisdomLeafBloom{
+  0%{opacity:.08;transform:scale(.05) rotate(-18deg)}
+  62%{opacity:1;transform:scale(1.25) rotate(5deg)}
+  100%{opacity:1;transform:scale(1) rotate(0)}
+}
+@keyframes ts100WisdomPulse{0%,100%{opacity:.28;transform:scale(.9)}50%{opacity:1;transform:scale(1.18)}}
+@media(max-width:767px){
+  #tistory100Story .ts100-wisdom-tree-map-shell{padding:4px 2px 10px;border-radius:0}
+  #tistory100Story .ts100-wisdom-tree-art{border-radius:10px;aspect-ratio:900/700}
+  #tistory100Story .ts100-tree-cat-badge,
+  #tistory100Story .ts100-tree-cat-title,
+  #tistory100Story .ts100-tree-cat-count{display:none}
+  #tistory100Story .ts100-wisdom-tree-hint{padding:0 10px;font-size:11.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  #tistory100Story .ts100-tree-bud.is-new,
+  #tistory100Story .ts100-tree-bud-ring{animation:none!important}
+}
+
+
+
+/* ============================================================
+   VOL.01 v23 · MOTION + MEMORY ECHO + SEARCHED SHELF + MILESTONES
+   - stable v19 story engine retained
+   - one selected shelf at a time
+   - no Canvas / WebGL / external library
+   ============================================================ */
+#tistory100Story .ts100-library-compact{
+  padding:20px;
+  background:linear-gradient(180deg,#fff 0%,#fbfaf7 100%);
+}
+#tistory100Story .ts100-library-compact .ts100-wisdom-summary-head{margin-bottom:12px}
+#tistory100Story .ts100-library-compact .ts100-record-title{margin-bottom:5px;font-size:19px}
+#tistory100Story .ts100-library-compact .ts100-wisdom-completion-desc{font-size:12.5px;line-height:1.55}
+#tistory100Story .ts100-library-metrics{margin:12px 0 10px;gap:7px}
+#tistory100Story .ts100-library-metrics .ts100-wisdom-tree-metric{padding:9px 7px;border-radius:11px;background:#faf8f5}
+#tistory100Story .ts100-library-metrics .ts100-wisdom-tree-metric span{font-size:10.5px}
+#tistory100Story .ts100-library-metrics .ts100-wisdom-tree-metric strong{margin-top:2px;font-size:14px}
+#tistory100Story .ts100-library-legend{
+  display:flex!important;
+  grid-template-columns:none!important;
+  gap:6px;
+  margin:0 0 10px;
+  padding:2px 1px 6px;
+  overflow-x:auto;
+  overscroll-behavior-x:contain;
+  scrollbar-width:thin;
+  -webkit-overflow-scrolling:touch;
+}
+#tistory100Story .ts100-library-legend-item{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:34px;
+  padding:7px 10px;
+  border:1px solid #e4ddd4;
+  border-radius:999px;
+  background:#fff;
+  color:#655b52;
+  font:inherit;
+  font-size:11px;
+  font-weight:800;
+  white-space:nowrap;
+  cursor:pointer;
+}
+#tistory100Story .ts100-library-legend-item b{color:#9a8875;font-size:9.5px}
+#tistory100Story .ts100-library-legend-item.is-selected{
+  border-color:#6f5b47;
+  background:#5d4c3d;
+  color:#fff;
+  box-shadow:0 4px 12px rgba(79,61,46,.12);
+}
+#tistory100Story .ts100-library-legend-item.is-selected b{color:rgba(255,255,255,.72)}
+#tistory100Story .ts100-wisdom-library-shell{
+  min-height:0!important;
+  padding:12px!important;
+  border:1px solid #e7e0d7!important;
+  border-radius:16px!important;
+  background:#f8f5f0!important;
+  box-shadow:none!important;
+  overflow:hidden;
+}
+#tistory100Story .ts100-wisdom-library{width:100%}
+#tistory100Story .ts100-library-shelf{
+  position:relative;
+  min-width:0;
+  padding:13px 13px 20px;
+  border:1px solid #e7dfd5;
+  border-radius:13px;
+  background:#fff;
+  box-shadow:0 6px 18px rgba(62,48,36,.05);
+}
+#tistory100Story .ts100-library-shelf-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:8px;
+}
+#tistory100Story .ts100-library-shelf-head>div{display:flex;align-items:center;gap:8px;min-width:0}
+#tistory100Story .ts100-library-shelf-index{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;height:24px;
+  border-radius:8px;
+  background:#f0ebe5;
+  color:#8d7762;
+  font-size:9.5px;
+  font-weight:900;
+}
+#tistory100Story .ts100-library-shelf-head strong{color:#3f3730;font-size:14px;font-weight:900;white-space:nowrap}
+#tistory100Story .ts100-library-shelf-head>b{color:#8d7b69;font-size:11px;font-weight:900;white-space:nowrap}
+#tistory100Story .ts100-library-books{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:6px;
+  height:86px;
+  padding:5px 4px 0;
+}
+#tistory100Story .ts100-library-book{
+  position:relative;
+  flex:0 1 30px;
+  width:30px;
+  min-width:18px;
+  height:var(--book-h,90%);
+  padding:0;
+  border:1px solid rgba(84,61,42,.12);
+  border-radius:3px 4px 2px 2px;
+  transform:rotate(var(--book-tilt,0deg));
+  transform-origin:50% 100%;
+  overflow:hidden;
+  box-shadow:inset 2px 0 0 rgba(255,255,255,.16),inset -2px 0 0 rgba(57,37,22,.06),0 2px 3px rgba(58,39,25,.10);
+}
+#tistory100Story button.ts100-library-book{appearance:none;-webkit-appearance:none;font:inherit;cursor:pointer}
+#tistory100Story .ts100-library-book.is-unread{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  background:linear-gradient(180deg,#f4f1ec,#e9e3db);
+  border-color:#ded6cc;
+  box-shadow:none;
+  opacity:.72;
+}
+#tistory100Story .ts100-library-book.is-read{color:#fff;transition:transform .2s ease,filter .2s ease,box-shadow .2s ease}
+#tistory100Story .ts100-library-book.is-read:hover,
+#tistory100Story .ts100-library-book.is-read:focus-visible{
+  transform:translateY(-5px) rotate(0deg);
+  filter:brightness(1.03);
+  box-shadow:0 7px 12px rgba(56,36,21,.14),inset 2px 0 0 rgba(255,255,255,.18);
+  outline:none;
+}
+#tistory100Story .ts100-library-book.is-current{border-color:#d4ad65;box-shadow:0 0 0 2px rgba(221,181,109,.22),0 4px 9px rgba(105,74,35,.16)}
+#tistory100Story .ts100-library-book.is-new{animation:ts100BookArriveCompact .9s cubic-bezier(.16,.8,.22,1.1) both}
+#tistory100Story .ts100-library-book-shine{position:absolute;inset:0 auto 0 4px;width:2px;background:rgba(255,255,255,.20);pointer-events:none}
+#tistory100Story .ts100-library-book-title{
+  position:absolute;
+  inset:6px 4px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  color:rgba(255,255,255,.94);
+  font-size:8px;
+  font-weight:850;
+  line-height:1.1;
+  overflow:hidden;
+}
+#tistory100Story .ts100-library-book-number{
+  position:absolute;
+  left:2px;right:2px;bottom:4px;
+  color:rgba(255,255,255,.88);
+  font-size:7.2px;
+  font-weight:900;
+  text-align:center;
+}
+#tistory100Story .ts100-library-book.is-unread .ts100-library-book-number{color:#9a8d80}
+#tistory100Story .ts100-library-bookmark{
+  position:absolute;top:-1px;right:4px;width:6px;height:17px;
+  background:#e0b45c;
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%);
+}
+#tistory100Story .ts100-library-shelf-board{
+  position:absolute;
+  z-index:3;
+  left:8px;right:8px;bottom:9px;
+  height:8px;
+  border-radius:2px;
+  background:linear-gradient(180deg,#ad8969,#866348);
+  box-shadow:0 2px 4px rgba(66,41,24,.16),inset 0 1px 0 rgba(255,235,210,.30);
+}
+#tistory100Story .ts100-library-complete-mark{margin:10px 0 0;color:#8b6d4e;font-size:11px;font-weight:800;text-align:center}
+#tistory100Story .ts100-book-palette-01{background:linear-gradient(90deg,#6f7d6a,#93a189 58%,#626f5f)}
+#tistory100Story .ts100-book-palette-02{background:linear-gradient(90deg,#996b51,#bc8666 58%,#855c45)}
+#tistory100Story .ts100-book-palette-03{background:linear-gradient(90deg,#80724d,#a49368 58%,#6e623f)}
+#tistory100Story .ts100-book-palette-04{background:linear-gradient(90deg,#73636d,#978391 58%,#64545e)}
+#tistory100Story .ts100-book-palette-05{background:linear-gradient(90deg,#617c81,#81a0a4 58%,#536b70)}
+#tistory100Story .ts100-book-palette-06{background:linear-gradient(90deg,#8b625d,#ad7d75 58%,#76514d)}
+#tistory100Story .ts100-book-palette-07{background:linear-gradient(90deg,#656e82,#8590aa 58%,#565f72)}
+#tistory100Story .ts100-book-palette-08{background:linear-gradient(90deg,#81704e,#aa9365 58%,#6f6042)}
+#tistory100Story .ts100-book-palette-09{background:linear-gradient(90deg,#6e6660,#91867d 58%,#5d5651)}
+#tistory100Story .ts100-book-palette-10{background:linear-gradient(90deg,#6a7658,#8b9b72 58%,#5b664b)}
+#tistory100Story .ts100-library-message{margin-top:10px;padding:10px 12px;border-radius:11px;background:#fff;border:1px solid #ebe4db;text-align:left}
+#tistory100Story .ts100-library-message strong{font-size:13px}
+#tistory100Story .ts100-library-message span{font-size:11.5px;line-height:1.55}
+#tistory100Story .ts100-library-compact .ts100-wisdom-summary-note{margin-top:10px;font-size:11.5px}
+@keyframes ts100BookArriveCompact{
+  0%{opacity:0;transform:translateY(-30px) rotate(-5deg) scale(.94)}
+  70%{opacity:1;transform:translateY(3px) rotate(.6deg) scale(1.02)}
+  100%{opacity:1;transform:rotate(var(--book-tilt,0deg)) scale(1)}
+}
+@media(max-width:560px){
+  #tistory100Story .ts100-library-compact{padding:16px}
+  #tistory100Story .ts100-library-metrics{gap:5px}
+  #tistory100Story .ts100-library-metrics .ts100-wisdom-tree-metric{padding:8px 4px}
+  #tistory100Story .ts100-library-metrics .ts100-wisdom-tree-metric strong{font-size:13px}
+  #tistory100Story .ts100-library-legend{margin-left:-2px;margin-right:-2px}
+  #tistory100Story .ts100-library-legend-item{min-height:32px;padding:6px 9px;font-size:10.5px}
+  #tistory100Story .ts100-wisdom-library-shell{padding:8px!important;border-radius:13px!important}
+  #tistory100Story .ts100-library-shelf{padding:11px 7px 18px}
+  #tistory100Story .ts100-library-shelf-head{padding:0 3px}
+  #tistory100Story .ts100-library-shelf-head strong{font-size:12.5px}
+  #tistory100Story .ts100-library-books{height:72px;gap:3px;padding-left:1px;padding-right:1px}
+  #tistory100Story .ts100-library-book{flex:1 1 0;width:auto;max-width:25px;min-width:17px}
+  #tistory100Story .ts100-library-book-title{inset:5px 3px 18px;font-size:7px}
+  #tistory100Story .ts100-library-book-number{font-size:6.4px}
+  #tistory100Story .ts100-library-shelf-board{left:5px;right:5px;bottom:8px;height:7px}
+}
+@media(prefers-reduced-motion:reduce){
+  #tistory100Story .ts100-library-book.is-new{animation:none!important}
+  #tistory100Story .ts100-library-book.is-read{transition:none!important}
+}
+
+
+
+/* ==================================================
+   TimeStory v23 · quiet motion / aged Memory Echo / searched shelf / milestones
+   ================================================== */
+#tistory100Story .ts100-story-image{
+  transform-origin:var(--ts100-motion-origin,50% 50%);
+}
+#tistory100Story .ts100-story-image.ts100-motion-zoom-in{
+  animation-name:ts100ZoomInV23;
+}
+#tistory100Story .ts100-story-image.ts100-motion-zoom-out{
+  animation-name:ts100ZoomOutV23;
+}
+@keyframes ts100ZoomInV23{
+  from{transform:scale(1)}
+  to{transform:scale(var(--ts100-motion-scale,1.035))}
+}
+@keyframes ts100ZoomOutV23{
+  from{transform:scale(var(--ts100-motion-scale,1.032))}
+  to{transform:scale(1)}
+}
+#tistory100Story .ts100-memory-echo-actions{margin-top:16px}
+#tistory100Story .ts100-memory-echo-actions .ts100-btn{min-height:38px}
+#tistory100Story .ts100-search-result-actions{display:grid;gap:7px;margin-top:auto}
+#tistory100Story .ts100-search-result-actions .ts100-btn{width:100%;margin-top:0}
+#tistory100Story .ts100-library-shelf.is-complete{
+  border-color:#d9bd8d;
+  box-shadow:inset 0 0 0 1px rgba(214,177,112,.16),0 9px 24px rgba(112,78,35,.08);
+}
+#tistory100Story .ts100-library-shelf.is-complete .ts100-library-shelf-board{
+  box-shadow:0 4px 8px rgba(64,43,24,.14),0 0 18px rgba(215,177,109,.28);
+}
+#tistory100Story .ts100-wisdom-summary.is-library-complete{
+  border-color:#d5b16f;
+  box-shadow:0 14px 34px rgba(125,88,36,.12);
+}
+#tistory100Story .ts100-library-shelf.is-search-highlight{
+  animation:ts100ShelfSearchGlow 2.45s ease both;
+}
+#tistory100Story .ts100-library-book.is-search-highlight{
+  z-index:5;
+  animation:ts100BookSearchGlow 2.45s cubic-bezier(.2,.72,.22,1) both!important;
+}
+@keyframes ts100ShelfSearchGlow{
+  0%,100%{box-shadow:0 8px 20px rgba(62,48,34,.05)}
+  22%,72%{box-shadow:0 0 0 3px rgba(207,166,94,.23),0 12px 30px rgba(122,83,31,.15)}
+}
+@keyframes ts100BookSearchGlow{
+  0%,100%{filter:none;transform:translateY(0) rotate(var(--book-tilt,0deg))}
+  20%,68%{filter:brightness(1.16) saturate(1.08);transform:translateY(-8px) rotate(var(--book-tilt,0deg));box-shadow:0 0 0 3px rgba(255,223,157,.48),0 9px 18px rgba(112,71,23,.24)}
+}
+#tistory100Story .ts100-completion-celebration.is-milestone-shelf .ts100-completion-card,
+#tistory100Story .ts100-completion-celebration.is-milestone-library .ts100-completion-card{
+  background:radial-gradient(circle at 50% 8%,rgba(255,239,191,.98),transparent 48%),linear-gradient(180deg,#fffdf6 0%,#f8efdd 100%);
+}
+#tistory100Story .ts100-completion-celebration.is-milestone-library .ts100-completion-card{
+  border-color:rgba(180,131,53,.45);
+  box-shadow:0 24px 70px rgba(65,43,15,.30),0 0 0 1px rgba(220,179,103,.20) inset;
+}
+@media(max-width:560px){
+  #tistory100Story .ts100-memory-echo-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  #tistory100Story .ts100-memory-echo-actions .ts100-btn{padding:0 9px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  #tistory100Story .ts100-library-shelf.is-search-highlight,
+  #tistory100Story .ts100-library-book.is-search-highlight{animation:none!important}
+}
+
+
+
+/* ==================================================
+   TimeStory v24 · 50% shelf discovery + reliable quiet image motion
+   ================================================== */
+#tistory100Story .ts100-story-image,
+#tistory100Story .ts100-story-image-ghost{
+  transition:opacity .46s ease!important;
+}
+#tistory100Story .ts100-story-image.ts100-motion-zoom-in{
+  animation:ts100ZoomInV24 var(--ts100-motion-duration,12s) linear both!important;
+}
+#tistory100Story .ts100-story-image.ts100-motion-zoom-out{
+  animation:ts100ZoomOutV24 var(--ts100-motion-duration,12s) linear both!important;
+}
+@keyframes ts100ZoomInV24{
+  from{transform:scale(1)}
+  to{transform:scale(var(--ts100-motion-scale,1.046))}
+}
+@keyframes ts100ZoomOutV24{
+  from{transform:scale(var(--ts100-motion-scale,1.042))}
+  to{transform:scale(1)}
+}
+#tistory100Story .ts100-library-book.is-reading{
+  color:#fff;
+  opacity:.84;
+  filter:saturate(.72);
+  border-style:dashed;
+  box-shadow:0 3px 8px rgba(78,58,35,.10);
+  transition:transform .2s ease,opacity .2s ease,filter .2s ease;
+}
+#tistory100Story .ts100-library-book.is-reading:hover,
+#tistory100Story .ts100-library-book.is-reading:focus-visible{
+  opacity:1;
+  filter:saturate(.95);
+  transform:translateY(-3px) rotate(var(--book-tilt,0deg));
+}
+#tistory100Story .ts100-library-reading-mark{
+  position:absolute;right:2px;top:2px;z-index:4;
+  display:grid;place-items:center;width:14px;height:14px;border-radius:50%;
+  background:rgba(255,255,255,.92);color:#735b3e;font-size:8px;font-weight:900;
+  box-shadow:0 1px 4px rgba(48,34,22,.16);
+}
+#tistory100Story .ts100-completion-celebration.is-midpoint .ts100-completion-stem,
+#tistory100Story .ts100-completion-celebration.is-midpoint .ts100-completion-flower{
+  display:none!important;
+}
+#tistory100Story .ts100-completion-celebration.is-midpoint .ts100-completion-card{
+  border-color:#d8c5aa;
+  background:linear-gradient(160deg,#fffdf9,#f5eee4);
+}
+@media(prefers-reduced-motion:reduce){
+  #tistory100Story .ts100-story-image.ts100-motion-zoom-in,
+  #tistory100Story .ts100-story-image.ts100-motion-zoom-out{animation:none!important;transform:none!important}
+}
+
+/* ==================================================
+   TimeStory v25 · seamless Ken Burns crossfade
+   - Freeze the outgoing image at its exact visual scale
+   - Prepare the incoming image motion while it is still transparent
+   - Never scale below 100%
+   ================================================== */
+#tistory100Story .ts100-story-image,
+#tistory100Story .ts100-story-image-ghost{
+  transition:opacity .68s cubic-bezier(.4,0,.2,1)!important;
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+}
+#tistory100Story .ts100-story-image-ghost{
+  will-change:opacity,transform;
+  animation:none!important;
+}
+
+
+/* ==================================================
+   TimeStory v30 · stable shelf restore + robust PNG export
+   ================================================== */
+#tistory100Story .ts100-story-image-layer{
+  opacity:0;
+  z-index:1;
+  transform:scale(1.03);
+  transition:none!important;
+  pointer-events:none;
+  will-change:opacity,transform;
+  contain:paint;
+}
+#tistory100Story .ts100-story-image-layer.is-active{opacity:1;z-index:2}
+#tistory100Story .ts100-story-media{
+  background:linear-gradient(135deg,#ded4c7,#f5efe7)!important;
+}
+#tistory100Story .ts100-story-fallback{
+  z-index:6;
+}
+#tistory100Story .ts100-source-note{
+  max-width:680px;margin:8px auto 0;color:#746a61;font-size:12.5px;line-height:1.6;text-align:center;word-break:keep-all
+}
+#tistory100Story .ts100-source-badge.is-source-a{background:#edf6ef;color:#315d3d;border-color:#cfe4d4}
+#tistory100Story .ts100-source-badge.is-source-b{background:#f5f0e8;color:#6a543a;border-color:#e5d8c7}
+#tistory100Story .ts100-source-badge.is-source-c{background:#eef2f8;color:#445a78;border-color:#d6dfec}
+#tistory100Story .ts100-auto-timeline{
+  margin:0;
+  padding:9px 14px 8px;
+  border:0;
+  border-top:1px solid #e8e0d7;
+  border-bottom:1px solid #eee7df;
+  border-radius:0;
+  background:#fbf9f6;
+}
+#tistory100Story .ts100-auto-timeline-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:9px}
+#tistory100Story .ts100-auto-timeline-track{min-width:0}
+#tistory100Story .ts100-auto-timeline .ts100-audio-range{display:block;width:100%;margin:0;accent-color:#8d7257}
+#tistory100Story .ts100-auto-timeline .ts100-audio-time{color:#655b52;margin-top:3px;font-size:11px}
+#tistory100Story .ts100-timeline-skip{min-width:68px;padding:7px 9px}
+#tistory100Story .ts100-audio-series{
+  margin-top:16px;padding-top:15px;border-top:1px solid rgba(255,255,255,.16)
+}
+#tistory100Story .ts100-audio-series-toggle{display:flex;align-items:center;gap:9px;color:#fff;font-size:13px;font-weight:750;cursor:pointer}
+#tistory100Story .ts100-audio-series-toggle input{width:18px;height:18px;accent-color:#d6b477}
+#tistory100Story .ts100-audio-series-toggle input:disabled+span{opacity:.55}
+#tistory100Story .ts100-audio-series-nav{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
+#tistory100Story .ts100-audio-series-status{margin:9px 0 0;color:rgba(255,255,255,.7);font-size:12px;line-height:1.55}
+@media(max-width:560px){
+  #tistory100Story .ts100-auto-timeline{padding:8px 9px 7px}
+  #tistory100Story .ts100-auto-timeline-row{grid-template-columns:52px minmax(0,1fr) 52px;gap:5px}
+  #tistory100Story .ts100-timeline-skip{min-width:0;padding:0 5px;font-size:0}
+  #tistory100Story .ts100-timeline-skip span{font-size:11px}
+  #tistory100Story .ts100-timeline-skip .ts100-btn-icon{width:15px;height:15px}
+  #tistory100Story .ts100-source-note{font-size:11.5px;padding:0 8px}
+}
+@media(prefers-reduced-motion:reduce){
+  #tistory100Story .ts100-story-image-layer{transform:scale(1.03)!important}
+}
+
+
+/* ==================================================
+   TimeStory v32 · compact hero + seamless series handoff
+   ================================================== */
+#tistory100Story .ts100-series-strip{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  margin:0 auto 24px;padding:0 2px 12px;border:0;border-bottom:1px solid #e8e0d7;border-radius:0;
+  background:transparent;color:#776d63;font-size:12px;line-height:1.35
+}
+#tistory100Story .ts100-series-current{font-weight:800;color:#786b5e;letter-spacing:.02em;white-space:nowrap}
+#tistory100Story .ts100-series-links{display:flex;align-items:center;justify-content:flex-end;gap:12px;min-width:0}
+#tistory100Story .ts100-series-prev,
+#tistory100Story .ts100-series-next{
+  margin:0;color:#6f5a43;font-weight:800;text-decoration:none;white-space:nowrap;transition:color .2s ease,opacity .2s ease
+}
+#tistory100Story .ts100-series-prev:hover,
+#tistory100Story .ts100-series-next:hover{color:#3e3125}
+#tistory100Story .ts100-series-prev[aria-disabled="true"],
+#tistory100Story .ts100-series-next[aria-disabled="true"]{opacity:.45;pointer-events:none}
+#tistory100Story .ts100-hero-actions{margin-top:20px}
+#tistory100Story .ts100-hero-duration{
+  display:flex;align-items:center;justify-content:center;gap:6px;margin:9px 0 0;color:#84796e;font-size:12px;font-weight:750;line-height:1
+}
+#tistory100Story .ts100-hero-duration .ts100-btn-icon{width:14px;height:14px;flex:0 0 14px}
+
+#tistory100Story .ts100-next-story{
+  display:flex;align-items:center;justify-content:space-between;gap:26px;margin-top:22px;padding:24px 26px;
+  border:1px solid #e6ddd2;border-radius:18px;background:linear-gradient(135deg,#fff 0%,#faf6f0 100%);
+  box-shadow:0 9px 26px rgba(73,57,43,.055)
+}
+#tistory100Story .ts100-next-story-copy{min-width:0}
+#tistory100Story .ts100-next-story-kicker{margin:0 0 7px;color:#9a7d5c;font-size:11.5px;font-weight:850;letter-spacing:.08em}
+#tistory100Story .ts100-next-story-heading{display:flex;align-items:baseline;gap:11px;min-width:0}
+#tistory100Story .ts100-next-story-hanja{color:#ad8c68;font-family:"Noto Serif KR","Nanum Myeongjo",serif;font-size:18px;font-weight:750;letter-spacing:.08em}
+#tistory100Story .ts100-next-story-title{margin:0;color:#302a25;font-size:22px;font-weight:900;letter-spacing:-.035em}
+#tistory100Story .ts100-next-story-subtitle{margin:7px 0 0;color:#74695f;font-size:13.5px;line-height:1.6;word-break:keep-all}
+#tistory100Story .ts100-next-story-link{
+  display:inline-flex;align-items:center;justify-content:center;gap:5px;flex:0 0 auto;min-height:42px;padding:10px 15px;
+  border:1px solid #cfb89d;border-radius:999px;background:#fff;color:#5f4935;font-size:13px;font-weight:850;text-decoration:none;white-space:nowrap
+}
+#tistory100Story .ts100-next-story-link .ts100-btn-icon{width:16px;height:16px}
+#tistory100Story .ts100-next-story-link[aria-disabled="true"]{opacity:.48;pointer-events:none}
+#tistory100Story .ts100-next-story + .ts100-experience[data-section="related"]{margin-top:14px}
+@media(max-width:767px){
+  #tistory100Story .ts100-series-strip{gap:8px;margin-bottom:20px;padding-bottom:10px;font-size:11px}
+  #tistory100Story .ts100-series-current{flex:0 0 auto}
+  #tistory100Story .ts100-series-links{flex:1 1 auto;overflow:hidden}
+  #tistory100Story .ts100-series-prev{display:none!important}
+  #tistory100Story .ts100-series-next{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+  #tistory100Story .ts100-next-story{align-items:flex-start;flex-direction:column;gap:15px;padding:20px 18px;border-radius:16px}
+  #tistory100Story .ts100-next-story-heading{gap:8px}
+  #tistory100Story .ts100-next-story-hanja{font-size:16px}
+  #tistory100Story .ts100-next-story-title{font-size:20px}
+  #tistory100Story .ts100-next-story-subtitle{font-size:13px}
+  #tistory100Story .ts100-next-story-link{width:100%}
+}
+
+
+
+
+/* 50% 읽기 팝업만 작게 */
+#tistory100Story
+.ts100-completion-celebration.is-midpoint
+.ts100-completion-card {
+  width: min(304px, calc(100vw - 40px));
+  padding: 15px 16px 14px;
+  border-radius: 18px;
+}
+
+#tistory100Story
+.ts100-completion-celebration.is-midpoint
+.ts100-completion-visual {
+  width: 82px;
+  height: 62px;
+  margin-bottom: 1px;
+}
+
+#tistory100Story
+.ts100-completion-celebration.is-midpoint
+.ts100-completion-shelf {
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  height: 6px;
+}
+
+#tistory100Story
+.ts100-completion-celebration.is-midpoint
+.ts100-completion-book {
+  bottom: 13px;
+  width: 26px;
+  height: 42px;
+  margin-left: -13px;
+}
+
+#tistory100Story
+.ts100-completion-celebration.is-midpoint
+.ts100-completion-title {
+  font-size: 18px;
+}
+
+#tistory100Story
+.ts100-completion-celebration.is-midpoint
+.ts100-completion-desc {
+  max-width: 250px;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+#tistory100Story
+.ts100-completion-celebration.is-midpoint
+.ts100-completion-progress {
+  min-height: 24px;
+  margin-top: 9px;
+  padding: 4px 9px;
+  font-size: 10.5px;
+}
+
+
+
+
+
+
+/* TimeStory v34 · SEO, no-script fallback and stable image rendering */
+#tistory100Story .ts100-noscript-content{
+  width:100%;max-width:860px;margin:18px auto;padding:22px 24px;
+  color:#332e29;background:#fff;border:1px solid #e6e0d8;border-radius:16px;
+  box-shadow:0 8px 24px rgba(44,37,30,.055)
+}
+#tistory100Story .ts100-noscript-content h2{
+  margin:0;color:#2f271f;font-family:"Noto Serif KR","Nanum Myeongjo",serif;
+  font-size:26px;line-height:1.4;letter-spacing:-.03em
+}
+#tistory100Story .ts100-noscript-content p{margin:12px 0 0;font-size:16px;line-height:1.85;word-break:keep-all}
+#tistory100Story .ts100-noscript-source{color:#746a61;font-size:13px!important}
+@media(max-width:560px){
+  #tistory100Story .ts100-noscript-content{margin:10px auto;padding:17px 15px;border-radius:12px}
+  #tistory100Story .ts100-noscript-content h2{font-size:22px}
+  #tistory100Story .ts100-noscript-content p{font-size:15px}
+}
+
+
+/* ==================================================
+   TimeStory v36.1 · strict scene-image synchronization
+   ================================================== */
+#tistory100Story .ts100-story-image-layer[data-bind="page-image"]{
+  opacity:1;
+  z-index:2;
+  transition:none!important;
+}
+#tistory100Story .ts100-story-image-layer[data-bind="page-image"].ts100-hidden{
+  display:none!important;
+}
+
+
+
+/* TimeStory Series Navigator v1.3 Three-Zone Links */
+.ts100-series-auto-next{
+  position:fixed;
+  left:50%;
+  bottom:18px;
+  z-index:2147482000;
+  width:min(92vw,520px);
+  padding:16px;
+  transform:translate(-50%,24px);
+  color:#2f271f;
+  background:rgba(255,252,247,.98);
+  border:1px solid rgba(91,75,58,.2);
+  border-radius:16px;
+  box-shadow:0 18px 50px rgba(35,28,22,.24);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease;
+}
+.ts100-series-auto-next.is-visible{
+  opacity:1;
+  transform:translate(-50%,0);
+  pointer-events:auto;
+}
+.ts100-series-auto-next-title{
+  margin:0;
+  color:#2f271f;
+  font-size:16px;
+  font-weight:900;
+  line-height:1.45;
+}
+.ts100-series-auto-next-desc{
+  margin:5px 0 0;
+  color:#6f665d;
+  font-size:13px;
+  line-height:1.55;
+}
+.ts100-series-auto-next-actions{
+  margin-top:12px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.ts100-series-auto-next button{
+  min-height:42px;
+  padding:0 12px;
+  border:1px solid #d8cec2;
+  border-radius:10px;
+  font:inherit;
+  font-size:13px;
+  font-weight:850;
+  cursor:pointer;
+}
+.ts100-series-auto-next-go{
+  color:#fff;
+  background:#5b4b3a;
+  border-color:#5b4b3a !important;
+}
+.ts100-series-auto-next-cancel{
+  color:#433629;
+  background:#fff;
+}
+@media (max-width:520px){
+  .ts100-series-auto-next{bottom:10px;padding:14px}
+}
+
+/* =========================================================
+   TimeStory 100선 검색 · 자동 추천
+   ========================================================= */
+.ts100-story-library {
+  position: relative;
+  overflow: hidden;
+}
+.ts100-story-library-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+.ts100-story-library-head .ts100-section-head {
+  margin: 0;
+}
+.ts100-story-library-open {
+  flex: 0 0 auto;
+  min-width: 190px;
+}
+.ts100-story-library-panel {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ts100-line, rgba(68, 53, 38, .14));
+}
+.ts100-library-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 240px) auto;
+  gap: 10px;
+  align-items: center;
+}
+.ts100-library-search,
+.ts100-library-category {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--ts100-line, rgba(68, 53, 38, .18));
+  border-radius: 14px;
+  background: var(--ts100-card, #fff);
+  color: var(--ts100-ink, #2f271f);
+  font: inherit;
+  padding: 0 15px;
+  outline: none;
+}
+.ts100-library-search:focus,
+.ts100-library-category:focus {
+  border-color: var(--ts100-accent, #6f5a43);
+  box-shadow: 0 0 0 3px rgba(111, 90, 67, .12);
+}
+.ts100-library-status {
+  margin: 14px 0 0;
+  color: var(--ts100-muted, #786f66);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.ts100-library-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+.ts100-library-card {
+  min-width: 0;
+  min-height: 154px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 18px;
+  border: 1px solid var(--ts100-line, rgba(68, 53, 38, .14));
+  border-radius: 18px;
+  background: var(--ts100-card, #fff);
+  color: inherit;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+a.ts100-library-card:hover,
+a.ts100-library-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--ts100-accent, #6f5a43);
+  box-shadow: 0 12px 28px rgba(45, 36, 27, .10);
+}
+.ts100-library-card.is-current {
+  border-color: var(--ts100-accent, #6f5a43);
+  box-shadow: inset 0 0 0 1px var(--ts100-accent, #6f5a43);
+}
+.ts100-library-card.is-pending {
+  opacity: .72;
+}
+.ts100-library-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.ts100-library-number,
+.ts100-library-state {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.ts100-library-number {
+  color: var(--ts100-accent, #6f5a43);
+}
+.ts100-library-state {
+  color: var(--ts100-muted, #786f66);
+}
+.ts100-library-hanja {
+  margin-top: 3px;
+  font-family: "Noto Serif KR", "Nanum Myeongjo", serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ts100-accent, #6f5a43);
+}
+.ts100-library-title {
+  font-size: 20px;
+  font-weight: 850;
+  line-height: 1.25;
+}
+.ts100-library-message {
+  margin: 0;
+  color: var(--ts100-muted, #786f66);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.ts100-library-category-label {
+  margin-top: auto;
+  font-size: 12px;
+  font-weight: 750;
+  color: var(--ts100-muted, #786f66);
+}
+.ts100-library-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+.ts100-related-card.is-pending {
+  cursor: default;
+  opacity: .7;
+}
+.ts100-related-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(111, 90, 67, .08);
+  color: var(--ts100-muted, #786f66);
+  font-size: 11px;
+  font-weight: 800;
+}
+@media (max-width: 860px) {
+  .ts100-story-library-head {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .ts100-story-library-open {
+    width: 100%;
+  }
+  .ts100-library-toolbar {
+    grid-template-columns: 1fr;
+  }
+  .ts100-library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .ts100-story-library-panel {
+    margin-top: 18px;
+    padding-top: 18px;
+  }
+  .ts100-library-grid {
+    grid-template-columns: 1fr;
+  }
+  .ts100-library-card {
+    min-height: 0;
+    padding: 16px;
+  }
+}
+
+/* =========================================================
+   TimeStory v3 · Header / Finder / Classical Shelf / Music
+   ========================================================= */
+
+/* 상단: TimeStory + 001/100 */
+#tistory100Story .ts100-header {
+  min-height: 66px;
+  gap: 16px;
+}
+
+#tistory100Story .ts100-brand {
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+#tistory100Story .ts100-brand-mark {
+  width: 36px;
+  height: 36px;
+  flex-basis: 36px;
+  border-radius: 12px;
+}
+
+#tistory100Story .ts100-brand-title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 9px;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+#tistory100Story .ts100-brand-title strong {
+  color: #2d261f;
+  font-family: Georgia, "Times New Roman", "Noto Serif KR", serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.025em;
+}
+
+#tistory100Story .ts100-brand-title [data-bind="header-title"] {
+  color: #8c7b6b;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+#tistory100Story .ts100-header-actions {
+  min-width: 0;
+  margin-left: auto;
+}
+
+#tistory100Story .ts100-header-series-nav {
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 7px;
+}
+
+#tistory100Story .ts100-header-series-link {
+  min-height: 42px;
+  max-width: 210px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border: 1px solid #ded4c9;
+  border-radius: 11px;
+  background: #fff;
+  color: #51463c;
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+}
+
+#tistory100Story .ts100-header-series-link:hover {
+  border-color: #a98b6b;
+  background: #faf6f0;
+  color: #352a21;
+}
+
+#tistory100Story .ts100-header-series-link[aria-disabled="true"] {
+  color: #9b9188;
+  background: #f7f4f0;
+  pointer-events: none;
+}
+
+#tistory100Story .ts100-series-strip {
+  display: none !important;
+}
+
+/* 지혜찾기 2분할 */
+#tistory100Story .ts100-wisdom-mode-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 20px 0;
+  padding: 5px;
+  border: 1px solid #e4dcd3;
+  border-radius: 15px;
+  background: #f5f1ec;
+}
+
+#tistory100Story .ts100-wisdom-mode-tab {
+  min-height: 46px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: #766a60;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+#tistory100Story .ts100-wisdom-mode-tab.is-active {
+  background: #fff;
+  color: #3d3229;
+  box-shadow: 0 5px 16px rgba(62, 48, 36, .08);
+}
+
+#tistory100Story .ts100-wisdom-mode-panel.ts100-hidden {
+  display: none !important;
+}
+
+#tistory100Story .ts100-idiom-finder-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 250px) auto;
+  gap: 10px;
+}
+
+#tistory100Story .ts100-idiom-finder-input,
+#tistory100Story .ts100-idiom-finder-category {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 15px;
+  border: 1px solid #ddd4ca;
+  border-radius: 13px;
+  background: #fff;
+  color: #302820;
+  font: inherit;
+  outline: none;
+}
+
+#tistory100Story .ts100-idiom-finder-input:focus,
+#tistory100Story .ts100-idiom-finder-category:focus {
+  border-color: #9c7c59;
+  box-shadow: 0 0 0 3px rgba(156, 124, 89, .12);
+}
+
+#tistory100Story .ts100-idiom-finder-results {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* 썸네일 카드 */
+#tistory100Story .ts100-card-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #eee7de, #ddd1c3);
+}
+
+#tistory100Story .ts100-card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+#tistory100Story .ts100-related-card,
+#tistory100Story .ts100-library-card,
+#tistory100Story .ts100-search-result {
+  overflow: hidden;
+}
+
+#tistory100Story .ts100-related-card .ts100-card-thumbnail,
+#tistory100Story .ts100-library-card .ts100-card-thumbnail {
+  margin-bottom: 6px;
+}
+
+#tistory100Story .ts100-search-result .ts100-card-thumbnail {
+  margin-bottom: 15px;
+}
+
+/* 두꺼운 고전 서가 */
+#tistory100Story .ts100-library-shelf {
+  padding: 17px 17px 25px;
+  border-color: #d9ccbd;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.96), rgba(249,244,237,.90) 58%, rgba(232,220,205,.88) 100%);
+  box-shadow:
+    inset 0 0 0 4px rgba(126, 89, 53, .045),
+    0 10px 24px rgba(62, 42, 27, .08);
+}
+
+#tistory100Story .ts100-library-books {
+  height: 122px;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px 2px;
+}
+
+#tistory100Story .ts100-library-books::before,
+#tistory100Story .ts100-library-books::after {
+  content: "";
+  flex: 0 0 17px;
+  height: 74%;
+  border: 1px solid rgba(65, 39, 21, .22);
+  border-radius: 5px 5px 2px 2px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.09), transparent 22% 78%, rgba(26,12,4,.18)),
+    linear-gradient(180deg, #765238, #3e291b);
+  box-shadow: 0 5px 9px rgba(47, 28, 15, .18);
+}
+
+#tistory100Story .ts100-library-book {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 36px;
+  max-width: 68px;
+  border-width: 2px 1px 2px;
+  border-radius: 6px 10px 4px 4px;
+  box-shadow:
+    inset 4px 0 0 rgba(255,255,255,.12),
+    inset -4px 0 0 rgba(39,20,8,.13),
+    0 6px 9px rgba(58, 34, 18, .16);
+}
+
+#tistory100Story .ts100-library-book::before,
+#tistory100Story .ts100-library-book::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  height: 3px;
+  border-top: 1px solid rgba(255, 225, 168, .55);
+  border-bottom: 1px solid rgba(55, 28, 12, .22);
+  background: rgba(151, 110, 57, .22);
+}
+
+#tistory100Story .ts100-library-book::before { top: 12px; }
+#tistory100Story .ts100-library-book::after { bottom: 15px; }
+
+#tistory100Story .ts100-library-book.is-unread {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.5), transparent 16% 82%, rgba(95,67,42,.08)),
+    linear-gradient(180deg, #f0e8dd, #d8cbbb);
+  border-color: #cdbda9;
+  opacity: .9;
+}
+
+#tistory100Story .ts100-library-book-title {
+  inset: 20px 7px 23px;
+  font-size: 9px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.22);
+}
+
+#tistory100Story .ts100-library-book-number {
+  bottom: 5px;
+  font-size: 7.5px;
+}
+
+#tistory100Story .ts100-library-shelf-board {
+  left: 5px;
+  right: 5px;
+  bottom: 8px;
+  height: 12px;
+  border-radius: 4px;
+  background:
+    linear-gradient(180deg, #bc8c5e 0 22%, #805638 23% 76%, #5f3b25 77% 100%);
+  box-shadow:
+    0 5px 9px rgba(54, 31, 16, .24),
+    inset 0 2px 0 rgba(255, 227, 190, .28);
+}
+
+/* 5분 사색 음악 */
+#tistory100Story .ts100-reflection-track {
+  margin: 16px auto 0;
+  padding: 15px;
+  border: 1px solid rgba(119, 88, 56, .18);
+  border-radius: 15px;
+  background: rgba(255,255,255,.72);
+  text-align: center;
+}
+
+#tistory100Story .ts100-reflection-track-kicker {
+  margin: 0;
+  color: #9a7b59;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+#tistory100Story .ts100-reflection-track-title {
+  margin: 6px 0 0;
+  color: #312820;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+#tistory100Story .ts100-reflection-track-subtitle {
+  margin: 5px 0 0;
+  color: #776b60;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+#tistory100Story .ts100-reflection-track-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+#tistory100Story .ts100-reflection-track-controls .ts100-btn {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* TimeStory 표기 통일 */
+#tistory100Story .ts100-time-story-wordmark {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -.02em;
+}
+
+@media (max-width: 860px) {
+  #tistory100Story .ts100-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  #tistory100Story .ts100-header-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  #tistory100Story .ts100-header-series-nav {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tistory100Story .ts100-header-series-link {
+    max-width: none;
+    min-height: 40px;
+    padding: 6px 7px;
+    font-size: 11px;
+  }
+
+  #tistory100Story .ts100-idiom-finder-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  #tistory100Story .ts100-idiom-finder-results {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #tistory100Story .ts100-library-books {
+    height: 110px;
+    gap: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  #tistory100Story .ts100-library-books::before,
+  #tistory100Story .ts100-library-books::after {
+    flex-basis: 9px;
+  }
+
+  #tistory100Story .ts100-library-book {
+    min-width: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  #tistory100Story .ts100-header {
+    padding: 10px;
+  }
+
+  #tistory100Story .ts100-brand-title strong {
+    font-size: 17px;
+  }
+
+  #tistory100Story .ts100-wisdom-mode-tabs {
+    gap: 5px;
+  }
+
+  #tistory100Story .ts100-wisdom-mode-tab {
+    padding: 0 7px;
+    font-size: 12px;
+  }
+
+  #tistory100Story .ts100-idiom-finder-results {
+    grid-template-columns: 1fr;
+  }
+
+  #tistory100Story .ts100-library-books {
+    height: 96px;
+    gap: 3px;
+  }
+
+  #tistory100Story .ts100-library-book {
+    min-width: 17px;
+    border-radius: 3px 5px 2px 2px;
+  }
+
+  #tistory100Story .ts100-library-book-title {
+    display: none;
+  }
+
+  #tistory100Story .ts100-library-books::before,
+  #tistory100Story .ts100-library-books::after {
+    display: none;
+  }
+}
+
+/* =========================================================
+   TimeStory v4 · Shared runtime / Mobile-first library
+   ========================================================= */
+
+/* 강한 대비의 게임 CTA */
+#tistory100Story .ts100-idiom-game-link {
+  color: #fff !important;
+  background: linear-gradient(135deg, #80512f 0%, #633b22 100%) !important;
+  border: 1px solid #9e724c !important;
+  box-shadow: 0 10px 22px rgba(83, 48, 25, .22);
+}
+#tistory100Story .ts100-idiom-game-link:hover,
+#tistory100Story .ts100-idiom-game-link:focus-visible {
+  color: #fff !important;
+  background: linear-gradient(135deg, #694027 0%, #4f2e1b 100%) !important;
+  border-color: #b58860 !important;
+  transform: translateY(-1px);
+}
+
+/* 검색 결과: 썸네일이 먼저 보이는 카드 */
+#tistory100Story .ts100-search-result,
+#tistory100Story .ts100-library-card,
+#tistory100Story .ts100-related-card {
+  min-width: 0;
+}
+#tistory100Story .ts100-card-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #eee6dc, #d9cbbb);
+}
+#tistory100Story .ts100-card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* 100선: 10개 삶의 영역 아코디언 */
+#tistory100Story .ts100-library-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+#tistory100Story .ts100-library-groups {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+#tistory100Story .ts100-library-group {
+  overflow: hidden;
+  border: 1px solid rgba(92, 69, 48, .16);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .84);
+}
+#tistory100Story .ts100-library-group-toggle {
+  width: 100%;
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 15px;
+  border: 0;
+  background: transparent;
+  color: #352c24;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+#tistory100Story .ts100-library-group-toggle:hover,
+#tistory100Story .ts100-library-group-toggle:focus-visible,
+#tistory100Story .ts100-library-group.is-open .ts100-library-group-toggle {
+  background: #f5eee5;
+}
+#tistory100Story .ts100-library-group-index {
+  width: 31px;
+  height: 31px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #6f4c31;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+}
+#tistory100Story .ts100-library-group-title {
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 900;
+}
+#tistory100Story .ts100-library-group-progress {
+  color: #88796a;
+  font-size: 12px;
+  font-weight: 800;
+}
+#tistory100Story .ts100-library-group-arrow {
+  color: #806246;
+  font-size: 15px;
+  transition: transform .18s ease;
+}
+#tistory100Story .ts100-library-group.is-open .ts100-library-group-arrow {
+  transform: rotate(180deg);
+}
+#tistory100Story .ts100-library-group-body {
+  display: grid;
+  gap: 8px;
+  padding: 0 10px 12px;
+}
+#tistory100Story .ts100-library-row {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid rgba(92, 69, 48, .12);
+  border-radius: 13px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+#tistory100Story a.ts100-library-row:hover,
+#tistory100Story a.ts100-library-row:focus-visible {
+  border-color: #9c7652;
+  box-shadow: 0 8px 20px rgba(72, 48, 29, .08);
+}
+#tistory100Story .ts100-library-row.is-current {
+  border-color: #8c6039;
+  box-shadow: inset 0 0 0 1px #8c6039;
+}
+#tistory100Story .ts100-library-row.is-pending {
+  opacity: .7;
+}
+#tistory100Story .ts100-library-row-thumb {
+  width: 112px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #eee6dc;
+}
+#tistory100Story .ts100-library-row-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+#tistory100Story .ts100-library-row-copy {
+  min-width: 0;
+}
+#tistory100Story .ts100-library-row-title {
+  display: block;
+  color: #312820;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+#tistory100Story .ts100-library-row-hanja {
+  display: block;
+  margin-top: 3px;
+  color: #88694b;
+  font-family: "Noto Serif KR", "Nanum Myeongjo", serif;
+  font-size: 13px;
+  font-weight: 750;
+}
+#tistory100Story .ts100-library-row-message {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 4px;
+  color: #756b62;
+  font-size: 12px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+#tistory100Story .ts100-library-row-state {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #f1ebe4;
+  color: #765a41;
+  font-size: 11px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+/* 5분 사색: 단순 무작위 재생 */
+#tistory100Story .ts100-reflection-track-controls {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+#tistory100Story .ts100-reflection-track-kicker,
+#tistory100Story .ts100-reflection-track-subtitle {
+  display: none;
+}
+
+/* 공통 오류 화면 */
+#tistory100Story .ts100-runtime-error {
+  margin: 18px auto;
+  padding: 22px;
+  border: 1px solid #dfd5cb;
+  border-radius: 16px;
+  background: #fff;
+  color: #3a3028;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  #tistory100Story .ts100-idiom-game-link {
+    width: 100%;
+    min-height: 52px;
+    min-width: 0;
+    font-size: 15px;
+    font-weight: 900;
+    white-space: normal;
+  }
+  #tistory100Story .ts100-search-results,
+  #tistory100Story .ts100-idiom-finder-results,
+  #tistory100Story .ts100-related-grid {
+    grid-template-columns: 1fr !important;
+  }
+  #tistory100Story .ts100-search-result,
+  #tistory100Story .ts100-related-card,
+  #tistory100Story .ts100-library-card {
+    display: grid;
+    grid-template-columns: 108px minmax(0, 1fr);
+    gap: 11px;
+    align-items: start;
+  }
+  #tistory100Story .ts100-search-result .ts100-card-thumbnail,
+  #tistory100Story .ts100-related-card .ts100-card-thumbnail,
+  #tistory100Story .ts100-library-card .ts100-card-thumbnail {
+    grid-row: 1 / span 7;
+    width: 108px;
+    margin: 0;
+  }
+  #tistory100Story .ts100-library-toolbar {
+    grid-template-columns: 1fr;
+  }
+  #tistory100Story .ts100-library-group-toggle {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 8px;
+    padding: 11px 12px;
+  }
+  #tistory100Story .ts100-library-group-progress {
+    display: none;
+  }
+  #tistory100Story .ts100-library-row {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 10px;
+    padding: 9px;
+  }
+  #tistory100Story .ts100-library-row-thumb {
+    width: 96px;
+  }
+  #tistory100Story .ts100-library-row-state {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 2px;
+  }
+  #tistory100Story .ts100-library-row-message {
+    -webkit-line-clamp: 1;
+  }
+}
+
+@media (max-width: 390px) {
+  #tistory100Story .ts100-library-row {
+    grid-template-columns: 82px minmax(0, 1fr);
+  }
+  #tistory100Story .ts100-library-row-thumb {
+    width: 82px;
+  }
+  #tistory100Story .ts100-library-row-title {
+    font-size: 15px;
+  }
+}

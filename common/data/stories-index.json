@@ -4,7 +4,7 @@
   "recordCount": 100,
   "baseUrl": "https://www.tistory100.com",
   "urlPolicy": "published-url-from-catalog",
-  "description": "HTML에는 연도와 월을 고정하지 않습니다. 실제 게시 후 해당 작품의 url, enabled, published만 갱신합니다.",
+  "description": "TIME STORY VOL.01 실제 게시 URL, 작품 데이터, PNG 썸네일과 전체 100편 검색 인덱스를 연결하는 공통 카탈로그",
   "items": [
     {
       "number": 1,
@@ -19,9 +19,9 @@
       "enabled": true,
       "published": true,
       "status": "published",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/001.jfif",
-      "thumbnailFileName": "001.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/001.png",
+      "thumbnailFileName": "001.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 2,
@@ -36,9 +36,9 @@
       "enabled": true,
       "published": true,
       "status": "published",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/002.jfif",
-      "thumbnailFileName": "002.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/002.png",
+      "thumbnailFileName": "002.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 3,
@@ -53,9 +53,9 @@
       "enabled": true,
       "published": true,
       "status": "published",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/003.jfif",
-      "thumbnailFileName": "003.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/003.png",
+      "thumbnailFileName": "003.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 4,
@@ -70,9 +70,9 @@
       "enabled": true,
       "published": true,
       "status": "published",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/004.jfif",
-      "thumbnailFileName": "004.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/004.png",
+      "thumbnailFileName": "004.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 5,
@@ -87,9 +87,9 @@
       "enabled": true,
       "published": true,
       "status": "published",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/005.jfif",
-      "thumbnailFileName": "005.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/005.png",
+      "thumbnailFileName": "005.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 6,
@@ -104,9 +104,9 @@
       "enabled": false,
       "published": false,
       "status": "ready",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/006.jfif",
-      "thumbnailFileName": "006.jfif",
-      "thumbnailStatus": "ready"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/006.png",
+      "thumbnailFileName": "006.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 7,
@@ -121,9 +121,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/007.jfif",
-      "thumbnailFileName": "007.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/007.png",
+      "thumbnailFileName": "007.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 8,
@@ -138,9 +138,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/008.jfif",
-      "thumbnailFileName": "008.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/008.png",
+      "thumbnailFileName": "008.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 9,
@@ -155,9 +155,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/009.jfif",
-      "thumbnailFileName": "009.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/009.png",
+      "thumbnailFileName": "009.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 10,
@@ -172,9 +172,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/010.jfif",
-      "thumbnailFileName": "010.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/010.png",
+      "thumbnailFileName": "010.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 11,
@@ -189,9 +189,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/011.jfif",
-      "thumbnailFileName": "011.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/011.png",
+      "thumbnailFileName": "011.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 12,
@@ -206,9 +206,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/012.jfif",
-      "thumbnailFileName": "012.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/012.png",
+      "thumbnailFileName": "012.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 13,
@@ -223,9 +223,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/013.jfif",
-      "thumbnailFileName": "013.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/013.png",
+      "thumbnailFileName": "013.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 14,
@@ -240,9 +240,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/014.jfif",
-      "thumbnailFileName": "014.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/014.png",
+      "thumbnailFileName": "014.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 15,
@@ -257,9 +257,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/015.jfif",
-      "thumbnailFileName": "015.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/015.png",
+      "thumbnailFileName": "015.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 16,
@@ -274,9 +274,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/016.jfif",
-      "thumbnailFileName": "016.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/016.png",
+      "thumbnailFileName": "016.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 17,
@@ -291,9 +291,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/017.jfif",
-      "thumbnailFileName": "017.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/017.png",
+      "thumbnailFileName": "017.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 18,
@@ -308,9 +308,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/018.jfif",
-      "thumbnailFileName": "018.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/018.png",
+      "thumbnailFileName": "018.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 19,
@@ -325,9 +325,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/019.jfif",
-      "thumbnailFileName": "019.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/019.png",
+      "thumbnailFileName": "019.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 20,
@@ -342,9 +342,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/020.jfif",
-      "thumbnailFileName": "020.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/020.png",
+      "thumbnailFileName": "020.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 21,
@@ -359,9 +359,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/021.jfif",
-      "thumbnailFileName": "021.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/021.png",
+      "thumbnailFileName": "021.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 22,
@@ -376,9 +376,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/022.jfif",
-      "thumbnailFileName": "022.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/022.png",
+      "thumbnailFileName": "022.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 23,
@@ -393,9 +393,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/023.jfif",
-      "thumbnailFileName": "023.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/023.png",
+      "thumbnailFileName": "023.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 24,
@@ -410,9 +410,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/024.jfif",
-      "thumbnailFileName": "024.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/024.png",
+      "thumbnailFileName": "024.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 25,
@@ -427,9 +427,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/025.jfif",
-      "thumbnailFileName": "025.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/025.png",
+      "thumbnailFileName": "025.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 26,
@@ -444,9 +444,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/026.jfif",
-      "thumbnailFileName": "026.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/026.png",
+      "thumbnailFileName": "026.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 27,
@@ -461,9 +461,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/027.jfif",
-      "thumbnailFileName": "027.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/027.png",
+      "thumbnailFileName": "027.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 28,
@@ -478,9 +478,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/028.jfif",
-      "thumbnailFileName": "028.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/028.png",
+      "thumbnailFileName": "028.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 29,
@@ -495,9 +495,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/029.jfif",
-      "thumbnailFileName": "029.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/029.png",
+      "thumbnailFileName": "029.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 30,
@@ -512,9 +512,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/030.jfif",
-      "thumbnailFileName": "030.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/030.png",
+      "thumbnailFileName": "030.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 31,
@@ -529,9 +529,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/031.jfif",
-      "thumbnailFileName": "031.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/031.png",
+      "thumbnailFileName": "031.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 32,
@@ -546,9 +546,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/032.jfif",
-      "thumbnailFileName": "032.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/032.png",
+      "thumbnailFileName": "032.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 33,
@@ -563,9 +563,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/033.jfif",
-      "thumbnailFileName": "033.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/033.png",
+      "thumbnailFileName": "033.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 34,
@@ -580,9 +580,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/034.jfif",
-      "thumbnailFileName": "034.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/034.png",
+      "thumbnailFileName": "034.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 35,
@@ -597,9 +597,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/035.jfif",
-      "thumbnailFileName": "035.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/035.png",
+      "thumbnailFileName": "035.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 36,
@@ -614,9 +614,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/036.jfif",
-      "thumbnailFileName": "036.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/036.png",
+      "thumbnailFileName": "036.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 37,
@@ -631,9 +631,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/037.jfif",
-      "thumbnailFileName": "037.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/037.png",
+      "thumbnailFileName": "037.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 38,
@@ -648,9 +648,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/038.jfif",
-      "thumbnailFileName": "038.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/038.png",
+      "thumbnailFileName": "038.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 39,
@@ -665,9 +665,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/039.jfif",
-      "thumbnailFileName": "039.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/039.png",
+      "thumbnailFileName": "039.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 40,
@@ -682,9 +682,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/040.jfif",
-      "thumbnailFileName": "040.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/040.png",
+      "thumbnailFileName": "040.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 41,
@@ -699,9 +699,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/041.jfif",
-      "thumbnailFileName": "041.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/041.png",
+      "thumbnailFileName": "041.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 42,
@@ -716,9 +716,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/042.jfif",
-      "thumbnailFileName": "042.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/042.png",
+      "thumbnailFileName": "042.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 43,
@@ -733,9 +733,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/043.jfif",
-      "thumbnailFileName": "043.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/043.png",
+      "thumbnailFileName": "043.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 44,
@@ -750,9 +750,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/044.jfif",
-      "thumbnailFileName": "044.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/044.png",
+      "thumbnailFileName": "044.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 45,
@@ -767,9 +767,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/045.jfif",
-      "thumbnailFileName": "045.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/045.png",
+      "thumbnailFileName": "045.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 46,
@@ -784,9 +784,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/046.jfif",
-      "thumbnailFileName": "046.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/046.png",
+      "thumbnailFileName": "046.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 47,
@@ -801,9 +801,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/047.jfif",
-      "thumbnailFileName": "047.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/047.png",
+      "thumbnailFileName": "047.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 48,
@@ -818,9 +818,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/048.jfif",
-      "thumbnailFileName": "048.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/048.png",
+      "thumbnailFileName": "048.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 49,
@@ -835,9 +835,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/049.jfif",
-      "thumbnailFileName": "049.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/049.png",
+      "thumbnailFileName": "049.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 50,
@@ -852,9 +852,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/050.jfif",
-      "thumbnailFileName": "050.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/050.png",
+      "thumbnailFileName": "050.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 51,
@@ -869,9 +869,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/051.jfif",
-      "thumbnailFileName": "051.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/051.png",
+      "thumbnailFileName": "051.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 52,
@@ -886,9 +886,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/052.jfif",
-      "thumbnailFileName": "052.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/052.png",
+      "thumbnailFileName": "052.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 53,
@@ -903,9 +903,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/053.jfif",
-      "thumbnailFileName": "053.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/053.png",
+      "thumbnailFileName": "053.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 54,
@@ -920,9 +920,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/054.jfif",
-      "thumbnailFileName": "054.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/054.png",
+      "thumbnailFileName": "054.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 55,
@@ -937,9 +937,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/055.jfif",
-      "thumbnailFileName": "055.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/055.png",
+      "thumbnailFileName": "055.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 56,
@@ -954,9 +954,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/056.jfif",
-      "thumbnailFileName": "056.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/056.png",
+      "thumbnailFileName": "056.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 57,
@@ -971,9 +971,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/057.jfif",
-      "thumbnailFileName": "057.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/057.png",
+      "thumbnailFileName": "057.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 58,
@@ -988,9 +988,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/058.jfif",
-      "thumbnailFileName": "058.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/058.png",
+      "thumbnailFileName": "058.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 59,
@@ -1005,9 +1005,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/059.jfif",
-      "thumbnailFileName": "059.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/059.png",
+      "thumbnailFileName": "059.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 60,
@@ -1022,9 +1022,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/060.jfif",
-      "thumbnailFileName": "060.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/060.png",
+      "thumbnailFileName": "060.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 61,
@@ -1039,9 +1039,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/061.jfif",
-      "thumbnailFileName": "061.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/061.png",
+      "thumbnailFileName": "061.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 62,
@@ -1056,9 +1056,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/062.jfif",
-      "thumbnailFileName": "062.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/062.png",
+      "thumbnailFileName": "062.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 63,
@@ -1073,9 +1073,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/063.jfif",
-      "thumbnailFileName": "063.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/063.png",
+      "thumbnailFileName": "063.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 64,
@@ -1090,9 +1090,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/064.jfif",
-      "thumbnailFileName": "064.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/064.png",
+      "thumbnailFileName": "064.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 65,
@@ -1107,9 +1107,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/065.jfif",
-      "thumbnailFileName": "065.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/065.png",
+      "thumbnailFileName": "065.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 66,
@@ -1124,9 +1124,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/066.jfif",
-      "thumbnailFileName": "066.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/066.png",
+      "thumbnailFileName": "066.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 67,
@@ -1141,9 +1141,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/067.jfif",
-      "thumbnailFileName": "067.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/067.png",
+      "thumbnailFileName": "067.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 68,
@@ -1158,9 +1158,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/068.jfif",
-      "thumbnailFileName": "068.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/068.png",
+      "thumbnailFileName": "068.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 69,
@@ -1175,9 +1175,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/069.jfif",
-      "thumbnailFileName": "069.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/069.png",
+      "thumbnailFileName": "069.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 70,
@@ -1192,9 +1192,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/070.jfif",
-      "thumbnailFileName": "070.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/070.png",
+      "thumbnailFileName": "070.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 71,
@@ -1209,9 +1209,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/071.jfif",
-      "thumbnailFileName": "071.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/071.png",
+      "thumbnailFileName": "071.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 72,
@@ -1226,9 +1226,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/072.jfif",
-      "thumbnailFileName": "072.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/072.png",
+      "thumbnailFileName": "072.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 73,
@@ -1243,9 +1243,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/073.jfif",
-      "thumbnailFileName": "073.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/073.png",
+      "thumbnailFileName": "073.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 74,
@@ -1260,9 +1260,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/074.jfif",
-      "thumbnailFileName": "074.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/074.png",
+      "thumbnailFileName": "074.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 75,
@@ -1277,9 +1277,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/075.jfif",
-      "thumbnailFileName": "075.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/075.png",
+      "thumbnailFileName": "075.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 76,
@@ -1294,9 +1294,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/076.jfif",
-      "thumbnailFileName": "076.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/076.png",
+      "thumbnailFileName": "076.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 77,
@@ -1311,9 +1311,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/077.jfif",
-      "thumbnailFileName": "077.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/077.png",
+      "thumbnailFileName": "077.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 78,
@@ -1328,9 +1328,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/078.jfif",
-      "thumbnailFileName": "078.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/078.png",
+      "thumbnailFileName": "078.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 79,
@@ -1345,9 +1345,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/079.jfif",
-      "thumbnailFileName": "079.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/079.png",
+      "thumbnailFileName": "079.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 80,
@@ -1362,9 +1362,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/080.jfif",
-      "thumbnailFileName": "080.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/080.png",
+      "thumbnailFileName": "080.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 81,
@@ -1379,9 +1379,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/081.jfif",
-      "thumbnailFileName": "081.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/081.png",
+      "thumbnailFileName": "081.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 82,
@@ -1396,9 +1396,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/082.jfif",
-      "thumbnailFileName": "082.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/082.png",
+      "thumbnailFileName": "082.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 83,
@@ -1413,9 +1413,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/083.jfif",
-      "thumbnailFileName": "083.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/083.png",
+      "thumbnailFileName": "083.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 84,
@@ -1430,9 +1430,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/084.jfif",
-      "thumbnailFileName": "084.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/084.png",
+      "thumbnailFileName": "084.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 85,
@@ -1447,9 +1447,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/085.jfif",
-      "thumbnailFileName": "085.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/085.png",
+      "thumbnailFileName": "085.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 86,
@@ -1464,9 +1464,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/086.jfif",
-      "thumbnailFileName": "086.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/086.png",
+      "thumbnailFileName": "086.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 87,
@@ -1481,9 +1481,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/087.jfif",
-      "thumbnailFileName": "087.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/087.png",
+      "thumbnailFileName": "087.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 88,
@@ -1498,9 +1498,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/088.jfif",
-      "thumbnailFileName": "088.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/088.png",
+      "thumbnailFileName": "088.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 89,
@@ -1515,9 +1515,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/089.jfif",
-      "thumbnailFileName": "089.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/089.png",
+      "thumbnailFileName": "089.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 90,
@@ -1532,9 +1532,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/090.jfif",
-      "thumbnailFileName": "090.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/090.png",
+      "thumbnailFileName": "090.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 91,
@@ -1549,9 +1549,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/091.jfif",
-      "thumbnailFileName": "091.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/091.png",
+      "thumbnailFileName": "091.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 92,
@@ -1566,9 +1566,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/092.jfif",
-      "thumbnailFileName": "092.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/092.png",
+      "thumbnailFileName": "092.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 93,
@@ -1583,9 +1583,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/093.jfif",
-      "thumbnailFileName": "093.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/093.png",
+      "thumbnailFileName": "093.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 94,
@@ -1600,9 +1600,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/094.jfif",
-      "thumbnailFileName": "094.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/094.png",
+      "thumbnailFileName": "094.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 95,
@@ -1617,9 +1617,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/095.jfif",
-      "thumbnailFileName": "095.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/095.png",
+      "thumbnailFileName": "095.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 96,
@@ -1634,9 +1634,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/096.jfif",
-      "thumbnailFileName": "096.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/096.png",
+      "thumbnailFileName": "096.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 97,
@@ -1651,9 +1651,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/097.jfif",
-      "thumbnailFileName": "097.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/097.png",
+      "thumbnailFileName": "097.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 98,
@@ -1668,9 +1668,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/098.jfif",
-      "thumbnailFileName": "098.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/098.png",
+      "thumbnailFileName": "098.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 99,
@@ -1685,9 +1685,9 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/099.jfif",
-      "thumbnailFileName": "099.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/099.png",
+      "thumbnailFileName": "099.png",
+      "thumbnailStatus": "expected"
     },
     {
       "number": 100,
@@ -1702,10 +1702,11 @@
       "enabled": false,
       "published": false,
       "status": "draft",
-      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/100.jfif",
-      "thumbnailFileName": "100.jfif",
-      "thumbnailStatus": "pending"
+      "thumbnail": "https://healingmart.github.io/tistory100-story-assets/thumbs/100.png",
+      "thumbnailFileName": "100.png",
+      "thumbnailStatus": "expected"
     }
   ],
-  "thumbnailCatalog": "https://healingmart.github.io/tistory100-story-assets/common/data/thumbnails-index.json"
+  "thumbnailCatalog": "https://healingmart.github.io/tistory100-story-assets/common/data/thumbnails-index.json",
+  "libraryCatalog": "https://healingmart.github.io/tistory100-story-assets/common/data/story-library.json"
 }
